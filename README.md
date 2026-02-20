@@ -17,7 +17,62 @@ For the EA, this MVP is relevant because it provides a low-cost, accessible, and
 ### Figma-style GUI design
 <img width="931" height="772" alt="image" src="https://github.com/user-attachments/assets/f11d80de-d61f-4363-982a-37f248ced35d" />
 
-## Development Section
+## Requirements Table
+## Functional Requirements Table
+| ID   | Requirement |
+| ---- | ----------- |
+| FR1  | System must authenticate users via CSV.  |
+| FR2  | System must allow category selection.  |
+| FR3  | System must allow difficulty selection.  |
+| FR4  | System must load questions from CSV.  |
+| FR5  | System must display questions and options.  |
+| FR6  | System must validate answers.  |
+| FR7  | System must show correct/ incorrect feedback.  |
+| FR8  | System must show final score.  |
+| FR9  | System must support both TKinter and Streamlit interfaces  |
+| Content Cell  | Content Cell  |
+
+
+## Accessibility Requirements Table
+| ID   | Requirement |
+| ---- | ----------- |
+| AR1  | High-contrast colour scheme.  |
+| AR2  | Keyboard navigation supported.  |
+| AR3  | Text-based feedback(not colour only.  |
+| AR4  | Large readable fonts.  |
+| AR5  | Clear error messages.  |
+
+
+## Non-Functional Requirements Table
+| ID   | Requirement |
+| ---- | ----------- |
+| NFR1  | App should load within 2 seconds.  |
+| NFR2  | CSV errors handled.  |
+| NFR3  | Code must be modular and maintainable.  |
+| NFR4  | Logic must be testable via unit tests.  |
+| NFR5  | Must run on standard EA laptops without extra installation.  |
+
+
+## Tech Stack Outline
+**Language:** Python 3
+**GUI Frameworks:**
+  *TKinter (desktop)
+  *Streamlit (Web)
+**Data Storage:** CSV files (
+**Libraries:**
+    *CSV - reading/writing data
+    *TKinter - GUI
+    *Streamlit - Web interface
+    *unittest - automated testing
+    *dataclasses - Question model
+    
+**Tools:**
+    *GitHub - version control
+    *Figma -  interface prototyping
+    *Streamlit - Web interface
+    *VS Code - development environment
+    
+    
 
 ## Testing Section
 ### A third-level heading
