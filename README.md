@@ -18,7 +18,7 @@ For the EA, this MVP is relevant because it provides a low-cost, accessible, and
 <img width="931" height="772" alt="image" src="https://github.com/user-attachments/assets/f11d80de-d61f-4363-982a-37f248ced35d" />
 
 ## Requirements Table
-## Functional Requirements Table
+### Functional Requirements Table
 | ID   | Requirement |
 | ---- | ----------- |
 | FR1  | System must authenticate users via CSV.  |
@@ -30,10 +30,9 @@ For the EA, this MVP is relevant because it provides a low-cost, accessible, and
 | FR7  | System must show correct/ incorrect feedback.  |
 | FR8  | System must show final score.  |
 | FR9  | System must support both TKinter and Streamlit interfaces  |
-| Content Cell  | Content Cell  |
 
 
-## Accessibility Requirements Table
+### Accessibility Requirements Table
 | ID   | Requirement |
 | ---- | ----------- |
 | AR1  | High-contrast colour scheme.  |
@@ -43,34 +42,34 @@ For the EA, this MVP is relevant because it provides a low-cost, accessible, and
 | AR5  | Clear error messages.  |
 
 
-## Non-Functional Requirements Table
+### Non-Functional Requirements Table
 | ID   | Requirement |
 | ---- | ----------- |
-| NFR1  | App should load within 2 seconds.  |
-| NFR2  | CSV errors handled.  |
-| NFR3  | Code must be modular and maintainable.  |
-| NFR4  | Logic must be testable via unit tests.  |
-| NFR5  | Must run on standard EA laptops without extra installation.  |
+| NFR1 | App should load within 2 seconds.  |
+| NFR2 | CSV errors handled.  |
+| NFR3 | Code must be modular and maintainable.  |
+| NFR4 | Logic must be testable via unit tests.  |
+| NFR5 | Must run on standard EA laptops without extra installation.  |
 
 
 ## Tech Stack Outline
-**Language:** Python 3
-**GUI Frameworks:**
-  *TKinter (desktop)
-  *Streamlit (Web)
-**Data Storage:** CSV files (
-**Libraries:**
-    *CSV - reading/writing data
-    *TKinter - GUI
-    *Streamlit - Web interface
-    *unittest - automated testing
-    *dataclasses - Question model
++**Language:** Python 3
++**GUI Frameworks:**
+  +*TKinter (desktop)
+  +*Streamlit (Web)
++**Data Storage:** CSV files (
++**Libraries:**
+    +*CSV - reading/writing data
+   + *TKinter - GUI
+   + *Streamlit - Web interface
+   + *unittest - automated testing
+   + *dataclasses - Question model
     
-**Tools:**
-    *GitHub - version control
-    *Figma -  interface prototyping
-    *Streamlit - Web interface
-    *VS Code - development environment
++**Tools:**
+   + *GitHub - version control
+   + *Figma -  interface prototyping
+   + *Streamlit - Web interface
+   + *VS Code - development environment
     
     
 
