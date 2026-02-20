@@ -17,7 +17,12 @@ For the EA, this MVP is relevant because it provides a low-cost, accessible, and
 ### Figma-style GUI design
 <img width="931" height="772" alt="image" src="https://github.com/user-attachments/assets/f11d80de-d61f-4363-982a-37f248ced35d" />
 
+Figma is a collaborative interface-design tool used to create wireframes, mockups, and interactive prototypes.
+Designers use it to plan screen layouts, colours, typography, and other user journeys before coding begins.
+For the EA HYbrid Quiz, Figma was used to sketch each screen i.e. (Login, Welcome, Category Selection, Quiz) and ensure accessibility  and usability requirements are met in line with EA digital principles.
+
 ## Requirements Table
+
 ### Functional Requirements Table
 | ID   | Requirement |
 | ---- | ----------- |
@@ -32,12 +37,13 @@ For the EA, this MVP is relevant because it provides a low-cost, accessible, and
 | FR9  | System must support both TKinter and Streamlit interfaces  |
 
 
+
 ### Accessibility Requirements Table
 | ID   | Requirement |
 | ---- | ----------- |
 | AR1  | High-contrast colour scheme.  |
 | AR2  | Keyboard navigation supported.  |
-| AR3  | Text-based feedback(not colour only.  |
+| AR3  | Text-based feedback(not colour only. |
 | AR4  | Large readable fonts.  |
 | AR5  | Clear error messages.  |
 
@@ -50,6 +56,7 @@ For the EA, this MVP is relevant because it provides a low-cost, accessible, and
 | NFR3 | Code must be modular and maintainable.  |
 | NFR4 | Logic must be testable via unit tests.  |
 | NFR5 | Must run on standard EA laptops without extra installation.  |
+
 
 
 ## Tech Stack Outline
@@ -77,7 +84,7 @@ For the EA, this MVP is relevant because it provides a low-cost, accessible, and
   ### Class diagrams
 <img width="642" height="705" alt="image" src="https://github.com/user-attachments/assets/989315fd-90de-4898-8edd-7567e2658afa" />
 
-
+The UML  class diagrams provide a visual representation of the system's structure, showing classes, their attributes and methods, and the relationship between them. In the EA Hybrid Quiz, the class diagram clarifies how _LoginManager_, _QuizManager_, _Question_, _LoginWindow_, _TKQuizApp_, and the _Streamlit interface_ collaborate, supporting modularity, testability, and maintainability.
 
 ## Testing Section
 ### A third-level heading
