@@ -73,7 +73,11 @@ For the EA, this MVP is relevant because it provides a low-cost, accessible, and
    + Streamlit - Web interface
    + VS Code - development environment
     
-    
+ ## Code design document   
+  ### Class diagrams
+<img width="642" height="705" alt="image" src="https://github.com/user-attachments/assets/989315fd-90de-4898-8edd-7567e2658afa" />
+
+
 
 ## Testing Section
 ### A third-level heading
