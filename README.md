@@ -19,13 +19,13 @@ For the EA, this MVP is relevant because it provides a low-cost, accessible, and
 
 Figma is a collaborative interface-design tool used to create wireframes, mockups, and interactive prototypes.
 Designers use it to plan screen layouts, colours, typography, and other user journeys before coding begins.
-For the EA HYbrid Quiz, Figma was used to sketch each screen i.e. (Login, Welcome, Category Selection, Quiz) and ensure accessibility  and usability requirements are met in line with EA digital principles.
+For the EA HYbrid Quiz, Figma was used to sketch each screen i.e. (_Login_, _Welcome_, _Category Selection_, _Quiz_) ensure accessibility  and usability requirements are met in line with EA digital principles.
 
 ## Requirements Table
 
 ### Functional Requirements Table
 | ID   | Requirement |
-| ---- | ----------- |
+| ---- | ----- |
 | FR1  | System must authenticate users via CSV.  |
 | FR2  | System must allow category selection.  |
 | FR3  | System must allow difficulty selection.  |
@@ -40,7 +40,7 @@ For the EA HYbrid Quiz, Figma was used to sketch each screen i.e. (Login, Welcom
 
 ### Accessibility Requirements Table
 | ID   | Requirement |
-| ---- | ----------- |
+| ---- | -------- |
 | AR1  | High-contrast colour scheme.  |
 | AR2  | Keyboard navigation supported.  |
 | AR3  | Text-based feedback(not colour only. |
@@ -50,7 +50,7 @@ For the EA HYbrid Quiz, Figma was used to sketch each screen i.e. (Login, Welcom
 
 ### Non-Functional Requirements Table
 | ID   | Requirement |
-| ---- | ----------- |
+| ---- | -------- |
 | NFR1 | App should load within 2 seconds.  |
 | NFR2 | CSV errors handled.  |
 | NFR3 | Code must be modular and maintainable.  |
