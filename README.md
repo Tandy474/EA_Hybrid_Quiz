@@ -41,12 +41,13 @@ For the EA HYbrid Quiz, Figma was used to sketch each screen i.e. (_Login_, _Wel
 ### Accessibility Requirements Table
 | ID   | Requirement |
 | ---- | -------- |
-| AR1  | High-contrast colour scheme.  |
+| AR1  | High-contrast colour scheme. (e.g., white text on blue/green backgrounds) |
 | AR2  | Keyboard navigation supported.  |
 | AR3  | Text-based feedback(not colour only. |
 | AR4  | Large readable fonts.  |
 | AR5  | Clear error messages.  |
 
+These choices support inclusive use by EA staff and delivery partners with diverse needs.
 
 ### Non-Functional Requirements Table
 | ID   | Requirement |
