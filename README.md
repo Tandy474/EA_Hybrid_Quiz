@@ -53,23 +53,25 @@ For the EA, this MVP is relevant because it provides a low-cost, accessible, and
 
 
 ## Tech Stack Outline
-+**Language:** Python 3
-+**GUI Frameworks:**
-  +*TKinter (desktop)
-  +*Streamlit (Web)
+  +**Language:** Python 3
+  +**GUI Frameworks:**
+    +TKinter (desktop)
+    +Streamlit (Web)
+  
 +**Data Storage:** CSV files (
+
 +**Libraries:**
-    +*CSV - reading/writing data
-   + *TKinter - GUI
-   + *Streamlit - Web interface
-   + *unittest - automated testing
-   + *dataclasses - Question model
+    +CSV - reading/writing data
+    + TKinter - GUI
+   + Streamlit - Web interface
+   + unittest - automated testing
+   + dataclasses - Question model
     
 +**Tools:**
-   + *GitHub - version control
-   + *Figma -  interface prototyping
-   + *Streamlit - Web interface
-   + *VS Code - development environment
+   + GitHub - version control
+   + Figma -  interface prototyping
+   + Streamlit - Web interface
+   + VS Code - development environment
     
     
 
