@@ -354,12 +354,11 @@ class TkQuizApp:
         # Enable Next to move forward
         self.next_button.config(state="normal")
 
-    
-    def next_question(self):
+       def next_question(self):
         self.q_index += 1  # Move to next question
         self.load_question()
 
-   def launch_quiz(category, difficulty):
+    def launch_quiz(category, difficulty):
       quiz_root = tk.Tk()  # Create quiz window
       TkQuizApp(quiz_root, category, difficulty)
       quiz_root.mainloop()
