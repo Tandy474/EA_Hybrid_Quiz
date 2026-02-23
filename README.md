@@ -369,9 +369,170 @@ class TkQuizApp:
   + Uses accessible colours, large fonts, and clear feedback (AR1 -AR5)
 
 
+### 3.5 Streamlit Interface (streamlit_app.py)
+
+Streamlit provides a browser-based interface with built-in accessibility features such as responsive layout, keyboard navigation, and screen-reader compatibility.
+
+import streamlit as st
+import random
+from quiz_manager import QuizManager
+from login_manager import LoginManager
+
+qm = QuizManager()      # handles questions and answers
+lm = LoginManager()     # handles login authentication
+
+def main():
+    # Track login state
+    if "logged_in" not in st.session_state:
+        st.session_state.logged_in = False
+
+    # Login screen
+    if not st.session_state.logged_in:
+        username = st.text_input("Username")                     # user enters name
+        password = st.text_input("Password", type="password")    # hidden password field
+
+        if st.button("Login") and lm.authenticate(username, password):
+            st.session_state.logged_in = True                    # mark user as logged in
+            st.experimental_rerun()                              # reload quiz screen
+        return
+
+    st.title("EA Hybrid Quiz")
+
+    # Initialise score and question counter
+    if "score" not in st.session_state:
+        st.session_state.score = 0                               # number of correct answers
+        st.session_state.q_count = 0                             # how many questions asked
+
+    # Create a shuffled list of 5 unique questions
+    if "question_list" not in st.session_state:
+        st.session_state.question_list = random.sample(qm.questions, 5)
+
+    # End of quiz
+    if st.session_state.q_count >= 5:
+        st.success(f"Score: {st.session_state.score}/5")         # show final score
+
+        # Play Again button resets everything
+        if st.button("Play Again"):
+            st.session_state.score = 0
+            st.session_state.q_count = 0
+            st.session_state.question_list = random.sample(qm.questions, 5)
+            st.experimental_rerun()
+        return
+
+    # Get next question in the shuffled list
+    q = st.session_state.question_list[st.session_state.q_count]
+
+    # Display question and options
+    choice = st.radio(q.text, q.options)                         # user selects an answer
+
+    # Submit button checks answer
+    if st.button("Submit"):
+        if qm.check(choice, q.answer):                           # compare user answer
+            st.success("Correct!")
+            st.session_state.score += 1
+        else:
+            st.error(f"Incorrect. Correct answer: {q.answer}")
+
+        st.session_state.q_count += 1                            # move to next question
+        st.experimental_rerun()                                  # refresh page
+
+main()
+
+Contrubution
++ Automatically handles layout accessibility
++ Ideal for remote training or demonstrations.
++ Provides a web-based alternative interface.
+
+### 3.6  Application Entry Point (main.py)
+
+#Controls the login flow, welcome screen, and launches the quiz
+import tkinter as tk
+from tkinter import messagebox
+from login_manager import LoginManager
+from My_tkinter_app import CategoryDifficultySelector, launch_quiz
 
 
 
+### LOGIN WINDOW 
+
+class LoginWindow:
+    def __init__(self, root):
+        self.root = root
+        self.root.title("EA Quiz Login")
+        self.root.configure(bg="#1E90FF")  # Blue background
+
+        self.lm = LoginManager()           # Load users.csv
+
+        #Username label + entry
+        tk.Label(root, text="Username", bg="#1E90FF", fg="white", font=("Arial", 12)).pack(pady=5)
+        self.username_entry = tk.Entry(root, font=("Arial", 12))
+        self.username_entry.pack(pady=5)
+
+        #Password label + entry
+        tk.Label(root, text="Password", bg="#1E90FF", fg="white", font=("Arial", 12)).pack(pady=5)
+        self.password_entry = tk.Entry(root, show="*", font=("Arial", 12))
+        self.password_entry.pack(pady=5)
+
+        # Login button
+        tk.Button(root, text="Login", font=("Arial", 12), command=self.try_login).pack(pady=10)
+
+    #Validate login credentials
+    def try_login(self):
+        username = self.username_entry.get()
+        password = self.password_entry.get()
+
+        if self.lm.authenticate(username, password):
+            self.root.destroy()
+            self.open_welcome()
+        else:
+            messagebox.showerror("Login Failed", "Incorrect username or password")
+
+    
+    ### WELCOME SCREEN 
+    
+    def open_welcome(self):
+        welcome = tk.Tk()
+        welcome.title("Welcome")
+        welcome.configure(bg="#32CD32")  # Green background
+
+        #Welcome message
+        tk.Label(
+            welcome,
+            text="Welcome to the EA Hybrid Quiz!",
+            bg="#32CD32",
+            fg="white",
+            font=("Arial", 16, "bold")
+        ).pack(pady=20)
+
+        #Continue button
+        tk.Button(
+            welcome,
+            text="Continue",
+            font=("Arial", 14),
+            command=lambda: self.open_category_screen(welcome)
+        ).pack(pady=20)
+
+        welcome.mainloop()
+
+    #Open category/difficulty selector
+    def open_category_screen(self, win):
+        win.destroy()
+        selector_root = tk.Tk()
+        CategoryDifficultySelector(selector_root, launch_quiz)
+        selector_root.mainloop()
+
+
+### START APP
+
+if __name__ == "__main__":
+    root = tk.Tk()
+    LoginWindow(root)
+    root.mainloop()
+
+Contribution
++ Controls the full journey
++ Ensures a clean transition between login -- selection -- quiz
++ Supports accessibility by ensuring predictable navigation(AR2)
 
 
 
