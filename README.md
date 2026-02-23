@@ -1,4 +1,6 @@
-# EA Hybrid Quiz
+
+
+04257041# EA Hybrid Quiz
 
 #1  Introduction
 The Environment Agency(EA) operates across a wide range of environmental, regulatory, and operational domains, including flood risk management, pollution response, permitting, environmental monitoring, and incident management.  Staff and delivery partners must maintain a consistent baseline knowledge to ensure safe, compliant, and effective operations.  This includes understanding EA policies, procedures, environmental principles, and technical concepts relevant to decision-making.  In such a multidisciplinary environment, accessible digital learning tools play an important role in supporting competence, onboarding, and continuous professional development.
@@ -19,7 +21,7 @@ For the EA, this MVP is relevant because it provides a low-cost, accessible, and
 
 Figma is a collaborative interface-design tool used to create wireframes, mockups, and interactive prototypes.
 Designers use it to plan screen layouts, colours, typography, and other user journeys before coding begins.
-For the EA HYbrid Quiz, Figma was used to sketch each screen i.e. (_Login_, _Welcome_, _Category Selection_, _Quiz_) ensure accessibility  and usability requirements are met in line with EA digital principles.
+For the EA HYbrid Quiz, Figma was used to sketch each screen i.e. (_Login_, _Welcome_, _Category Selection_, _Quiz_) to ensure accessibility  and usability requirements are met in line with EA digital principles.
 
 ## Requirements Table
 
@@ -150,14 +152,231 @@ class QuizManager:
     def check(self, user_answer, correct_answer):
         return user_answer == correct_answer          # Returns True if correct
 
-++How it contributes
++How it contributes
 + Loads data (FR2) from _CSV_
 + Converts raw CSV rows into _Question_
 + Provides a function (check) for unit testing
 + Ensure separation of concerns: logic stays out of GUI.
 
 
-        
+### 3.3 LoginManager (login_Manager.py)
+The LoginManager handles user authentication _users.csv_
+#  user authentication by checking users.csv
+import csv
+
+class LoginManager:
+    def __init__(self, csv_path="users.csv"):
+        self.csv_path = csv_path                     # Path to users CSV
+        self.users = self.load_users()               # Load all users
+
+    def load_users(self):
+        users = {}                                   #  username → password
+        with open(self.csv_path, "r", encoding="utf-8-sig") as f:
+            reader = csv.DictReader(f)
+            for row in reader:
+                users[row["username"]] = row["password"]
+        return users
+
+    def authenticate(self, username, password):
+        return username in self.users and self.users[username] == password
+
+ +How it contributes
+   +Implents secure login (FR1)
+   +Provides clear error handling for invalid credentials.
+   +Keeps authentication separate from UI logic.
+
+### 3.4 TKinter Interface (My_TKinter_app.py)
+The TKinter provides a desktop_style GUI for EA laptops
+# My Tkinter quiz application with category selection, difficulty filtering,
+# image support, correct/wrong answer messages, and Next button flow.
+
+import tkinter as tk
+from tkinter import ttk, messagebox
+from tkinter import PhotoImage
+import os
+import random
+from quiz_manager import QuizManager
+
+
+
+class CategoryDifficultySelector:
+    def __init__(self, root, start_quiz_callback):
+        self.root = root
+        self.start_quiz_callback = start_quiz_callback
+        self.root.title("Choose Quiz Settings")
+        self.root.configure(bg="#32CD32")  # Green background for accessibility
+
+        # Title label
+        tk.Label(root, text="Select Category", font=("Arial", 16, "bold"),
+                 bg="#32CD32").pack(pady=10)
+
+        # Radio buttons for category selection
+        self.category_var = tk.StringVar()
+        categories = ["EA Basics", "Flooding", "Pollution", "Regulation"]
+        for cat in categories:
+            tk.Radiobutton(root, text=cat, variable=self.category_var, value=cat,
+                           bg="#32CD32", font=("Arial", 14)).pack(anchor="w")
+
+        # Difficulty label
+        tk.Label(root, text="Select Difficulty", font=("Arial", 16, "bold"),
+                 bg="#32CD32").pack(pady=10)
+
+        # Radio buttons for difficulty selection
+        self.difficulty_var = tk.StringVar()
+        difficulties = ["Easy", "Medium", "Hard"]
+        for diff in difficulties:
+            tk.Radiobutton(root, text=diff, variable=self.difficulty_var, value=diff,
+                           bg="#32CD32", font=("Arial", 14)).pack(anchor="w")
+
+        # Start button
+        tk.Button(root, text="Start Quiz", font=("Arial", 14),
+                  command=self.start).pack(pady=20)
+
+    def start(self):
+        # Validate user selections
+        category = self.category_var.get()
+        difficulty = self.difficulty_var.get()
+
+        if not category or not difficulty:
+            messagebox.showerror("Error", "Please select both category and difficulty")
+            return
+
+        # Close selector and launch quiz
+        self.root.destroy()
+        self.start_quiz_callback(category, difficulty)
+
+
+
+# MAIN QUIZ 
+
+class TkQuizApp:
+    def __init__(self, root, category, difficulty):
+        self.root = root
+        self.root.title("EA Hybrid Quiz")
+        self.root.configure(bg="#32CD32")  # Green background for accessibility
+
+        # Load questions from CSV
+        self.qm = QuizManager()
+
+        # Filter questions by category and difficulty
+        self.questions = [
+            q for q in self.qm.questions
+            if q.category == category and q.difficulty == difficulty
+        ]
+
+        # Randomly select 5 questions
+        self.questions = random.sample(self.questions, min(5, len(self.questions)))
+
+        self.q_index = 0  # Tracks current question index
+        self.score = 0    # Tracks correct answers
+
+        # Question text label
+        self.question_label = tk.Label(root, wraplength=500, font=("Arial", 16),
+                                       bg="#32CD32")
+        self.question_label.pack(pady=10)
+
+        # Image display label
+        self.image_label = tk.Label(root, bg="#32CD32")
+        self.image_label.pack(pady=10)
+
+        # Dropdown for answer choices
+        self.answer_var = tk.StringVar()
+        self.dropdown = ttk.Combobox(root, textvariable=self.answer_var,
+                                     state="readonly", font=("Arial", 14))
+        self.dropdown.pack(pady=5)
+
+        # Submit button
+        self.submit_button = tk.Button(root, text="Submit", font=("Arial", 14),
+                                       command=self.submit_answer)
+        self.submit_button.pack(pady=5)
+
+        # Next button (disabled until Submit is pressed)
+        self.next_button = tk.Button(root, text="Next", font=("Arial", 14),
+                                     command=self.next_question, state="disabled")
+        self.next_button.pack(pady=5)
+
+        # Load the first question
+        self.load_question()
+
+   
+    def load_question(self):
+        # End quiz if no more questions
+        if self.q_index >= len(self.questions):
+            messagebox.showinfo("Quiz Complete",
+                                f"Score: {self.score}/{len(self.questions)}")
+            self.root.destroy()
+            return
+
+        q = self.questions[self.q_index]  # Current question object
+
+        # Display question text
+        self.question_label.config(text=q.text)
+
+        # Load answer choices into dropdown
+        self.dropdown["values"] = q.options
+        self.answer_var.set(q.options[0])
+
+        # Load image if available
+        if q.image:
+            img_path = os.path.join("images", q.image)
+            if os.path.exists(img_path):
+                self.img = PhotoImage(file=img_path)
+                self.image_label.config(image=self.img)
+            else:
+                self.image_label.config(image="")
+        else:
+            self.image_label.config(image="")
+
+        # Reset buttons for new question
+        self.submit_button.config(state="normal")
+        self.next_button.config(state="disabled")
+
+    
+    def submit_answer(self):
+        q = self.questions[self.q_index]        # Current question
+        user_answer = self.answer_var.get()     # User's selected answer
+
+        # Correct answer feedback
+        if self.qm.check(user_answer, q.answer):
+            messagebox.showinfo("Correct", "Well done! That is the correct answer.")
+            self.score += 1
+        else:
+            # Wrong answer feedback with correct answer shown
+            messagebox.showwarning(
+                "Incorrect",
+                f"That is not correct.\n\nCorrect answer: {q.answer}"
+            )
+
+        # Disable Submit to prevent answer changes
+        self.submit_button.config(state="disabled")
+
+        # Enable Next to move forward
+        self.next_button.config(state="normal")
+
+    
+    def next_question(self):
+        self.q_index += 1  # Move to next question
+        self.load_question()
+
+
+
+def launch_quiz(category, difficulty):
+    quiz_root = tk.Tk()  # Create quiz window
+    TkQuizApp(quiz_root, category, difficulty)
+    quiz_root.mainloop()
+
+
++How it contributes
+  + Provides a fully interactive GUI (FR1 -FR9)
+  + Uses accessible colours, large fonts, and clear feedback (AR1 -AR5)
+
+
+
+
+
+
+
+
 
 ## Testing Section
 ### A third-level heading
