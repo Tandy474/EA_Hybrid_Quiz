@@ -373,13 +373,13 @@ class TkQuizApp:
 
 Streamlit provides a browser-based interface with built-in accessibility features such as responsive layout, keyboard navigation, and screen-reader compatibility.
 
-import streamlit as st
-import random
-from quiz_manager import QuizManager
-from login_manager import LoginManager
+ import streamlit as st
+ import random
+ from quiz_manager import QuizManager
+ from login_manager import LoginManager
 
-qm = QuizManager()      # handles questions and answers
-lm = LoginManager()     # handles login authentication
+ qm = QuizManager()      # handles questions and answers
+ lm = LoginManager()     # handles login authentication
 
 def main():
     # Track login state
