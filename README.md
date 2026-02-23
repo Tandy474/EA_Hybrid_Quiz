@@ -359,11 +359,12 @@ class TkQuizApp:
         self.q_index += 1  # Move to next question
         self.load_question()
 
-##launching quiz, select category and difficulty
-    def launch_quiz(category, difficulty):
-        quiz_root = tk.Tk()  # Create quiz window
-        TkQuizApp(quiz_root, category, difficulty)
-        quiz_root.mainloop()
+#launching quiz, select category and difficulty
+  def launch_quiz(category, difficulty):
+    quiz_root = tk.Tk()  # Create quiz window
+    TkQuizApp(quiz_root, category, difficulty)
+    quiz_root.mainloop()
+
 
 +How it contributes
   + Provides a fully interactive GUI (FR1 -FR9)
