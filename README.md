@@ -98,7 +98,7 @@ The EA Hybrid Quiz was developed using Python and follows a modular object-orien
 ### 3.1 Question (Question.py)
 The _Question_ class represents a single question.  It stores the text, answer options, correct answer, difficulty, and category 
 
-# Defines a simple Question object to store each quiz question
+ #Defines a simple Question object to store each quiz question
 from dataclasses import dataclass
 from typing import List, Optional
 
@@ -120,7 +120,7 @@ How the _Question_ contributes to the system:
 _QuizManager_ handles loading questions from _CSV_ and checking answers.
 It can be used and reused by TKinter and Streamlit.
 
-# Loads questions from questions.csv and converts them into Question objects
+#Loads questions from questions.csv and converts them into Question objects
 import csv
 from Question import Question
 
@@ -154,10 +154,10 @@ class QuizManager:
         return user_answer == correct_answer          # Returns True if correct
 
 +How it contributes
-+ Loads data (FR2) from _CSV_
-+ Converts raw CSV rows into _Question_
-+ Provides a function (check) for unit testing
-+ Ensure separation of concerns: logic stays out of GUI.
+  + Loads data (FR2) from _CSV_
+  + Converts raw CSV rows into _Question_
+  + Provides a function (check) for unit testing
+  + Ensure separation of concerns: logic stays out of GUI.
 
 
 ### 3.3 LoginManager (login_Manager.py)
