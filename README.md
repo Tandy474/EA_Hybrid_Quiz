@@ -358,10 +358,10 @@ class TkQuizApp:
         self.q_index += 1  # Move to next question
         self.load_question()
 
-    def launch_quiz(category, difficulty):
-      quiz_root = tk.Tk()  # Create quiz window
-      TkQuizApp(quiz_root, category, difficulty)
-      quiz_root.mainloop()
+     def launch_quiz(category, difficulty):
+       quiz_root = tk.Tk()  # Create quiz window
+       TkQuizApp(quiz_root, category, difficulty)
+       quiz_root.mainloop()
 
 
 +How it contributes
@@ -435,7 +435,6 @@ def main():
 
         st.session_state.q_count += 1                            # move to next question
         st.experimental_rerun()                                  # refresh page
-
 main()
 
 Contrubution
@@ -451,10 +450,7 @@ from tkinter import messagebox
 from login_manager import LoginManager
 from My_tkinter_app import CategoryDifficultySelector, launch_quiz
 
-
-
 ### LOGIN WINDOW 
-
 class LoginWindow:
     def __init__(self, root):
         self.root = root
@@ -486,16 +482,14 @@ class LoginWindow:
             self.open_welcome()
         else:
             messagebox.showerror("Login Failed", "Incorrect username or password")
-
     
     ### WELCOME SCREEN 
-    
-    def open_welcome(self):
+        def open_welcome(self):
         welcome = tk.Tk()
         welcome.title("Welcome")
         welcome.configure(bg="#32CD32")  # Green background
 
-        #Welcome message
+     #Welcome message
         tk.Label(
             welcome,
             text="Welcome to the EA Hybrid Quiz!",
@@ -521,9 +515,7 @@ class LoginWindow:
         CategoryDifficultySelector(selector_root, launch_quiz)
         selector_root.mainloop()
 
-
 ### START APP
-
 if __name__ == "__main__":
     root = tk.Tk()
     LoginWindow(root)
