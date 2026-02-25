@@ -453,6 +453,8 @@ How it contributes
 
 
 ### 3.6  Application Entry Point (main.py)
+
+
 #Controls the login flow, welcome screen, and launches the quiz
 
 
@@ -463,11 +465,11 @@ How it contributes
 #LOGIN WINDOW 
         class LoginWindow:
          def __init__(self, root):
-            self.root = root
-            self.root.title("EA Quiz Login")
-            self.root.configure(bg="#1E90FF")  # Blue background
+              self.root = root
+              self.root.title("EA Quiz Login")
+              self.root.configure(bg="#1E90FF")  # Blue background
 
-            self.lm = LoginManager()           # Load users.csv
+              self.lm = LoginManager()           # Load users.csv
 
         #Username label + entry
         tk.Label(root, text="Username", bg="#1E90FF", fg="white", font=("Arial", 12)).pack(pady=5)
@@ -480,7 +482,7 @@ How it contributes
         self.password_entry.pack(pady=5)
 
         #Login button
-        tk.Button(root, text="Login", font=("Arial", 12), command=self.try_login).pack(pady=10)
+          tk.Button(root, text="Login", font=("Arial", 12), command=self.try_login).pack(pady=10)
 
     #Validate login credentials
         def try_login(self):
