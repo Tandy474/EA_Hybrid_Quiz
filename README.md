@@ -168,16 +168,16 @@ It can be used and reused by TKinter and Streamlit.
 ### 3.3 LoginManager (login_Manager.py)
 The LoginManager handles user authentication _users.csv_
   #user authentication by checking users.csv
-import csv
 
-class LoginManager:
-    def __init__(self, csv_path="users.csv"):
-        self.csv_path = csv_path                     # Path to users CSV
-        self.users = self.load_users()               # Load all users
+  import csv
+  class LoginManager:
+      def __init__(self, csv_path="users.csv"):
+         self.csv_path = csv_path                     # Path to users CSV
+         self.users = self.load_users()               # Load all users
 
-    def load_users(self):
-        users = {}                                   #  username → password
-        with open(self.csv_path, "r", encoding="utf-8-sig") as f:
+     def load_users(self):
+         users = {}                                   #  username → password
+         with open(self.csv_path, "r", encoding="utf-8-sig") as f:
             reader = csv.DictReader(f)
             for row in reader:
                 users[row["username"]] = row["password"]
