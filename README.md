@@ -603,7 +603,7 @@ All manual tests passed successfully, demonstrating that the GUI behaves consist
 
 ### 4.2.2 Unit testing outcomes
 Unit tests were executed using:
-  python m unittest
+  _python m unittest_
 ```
 ###  Unit test code (test_quiz.py) 
      import unittest
