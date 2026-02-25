@@ -630,6 +630,17 @@ Unit tests were executed using:
     unittest.main()
 ```
 
+<img width="386" height="221" alt="image" src="https://github.com/user-attachments/assets/f718beeb-6586-4694-8e7e-ceb904f1910e" />
+```
+This demonstrates that:
+  + The logic behaves predictably
+  +  The question bank loads correctly
+  + The answer checking function works as intended
+
+### Summary of testing outcomes
+  +  All manual tests passed, confirming that the GUI behaves correctly
+  + All unit tests passed, confirming that the core logic is stable and reliable.
+  + The testing strategy successfully validated both the user experience and the logic, ensuring a suitable MVP for EA staff training.
 
 
 ### A third-level heading
