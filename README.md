@@ -158,7 +158,7 @@ It can be used and reused by TKinter and Streamlit.
 
 
 
-+How it contributes
+How it contributes
   + Loads data (FR2) from _CSV_
   + Converts raw CSV rows into _Question_
   + Provides a function (check) for unit testing
@@ -167,29 +167,32 @@ It can be used and reused by TKinter and Streamlit.
 
 ### 3.3 LoginManager (login_Manager.py)
 The LoginManager handles user authentication _users.csv_
+ 
   #user authentication by checking users.csv
 
-  import csv
-  class LoginManager:
-      def __init__(self, csv_path="users.csv"):
-         self.csv_path = csv_path                     # Path to users CSV
-         self.users = self.load_users()               # Load all users
+    import csv
+    class LoginManager:
+        def __init__(self, csv_path="users.csv"):
+           self.csv_path = csv_path                     # Path to users CSV
+           self.users = self.load_users()               # Load all users
 
-     def load_users(self):
-         users = {}                                   #  username → password
-         with open(self.csv_path, "r", encoding="utf-8-sig") as f:
-            reader = csv.DictReader(f)
-            for row in reader:
+      def load_users(self):
+          users = {}                                   #  username → password
+          with open(self.csv_path, "r", encoding="utf-8-sig") as f:
+             reader = csv.DictReader(f)
+             for row in reader:
                 users[row["username"]] = row["password"]
         return users
 
-    def authenticate(self, username, password):
+     def authenticate(self, username, password):
         return username in self.users and self.users[username] == password
 
- +How it contributes
+
+ How it contributes
    +Implents secure login (FR1)
    +Provides clear error handling for invalid credentials.
    +Keeps authentication separate from UI logic.
+
 
 ### 3.4 TKinter Interface (My_TKinter_app.py)
 The TKinter provides a desktop-style GUI for EA laptops
@@ -203,8 +206,6 @@ from tkinter import PhotoImage
 import os
 import random
 from quiz_manager import QuizManager
-
-
 
 class CategoryDifficultySelector:
     def __init__(self, root, start_quiz_callback):
@@ -369,7 +370,7 @@ class TkQuizApp:
        quiz_root.mainloop()
 
 
-+How it contributes
+How it contributes
   + Provides a fully interactive GUI (FR1 -FR9)
   + Uses accessible colours, large fonts, and clear feedback (AR1 -AR5)
 
@@ -442,7 +443,7 @@ def main():
         st.experimental_rerun()                                  # refresh page
 main()
 
-Contrubution
+How it contributes
 + Automatically handles layout accessibility
 + Ideal for remote training or demonstrations.
 + Provides a web-based alternative interface.
