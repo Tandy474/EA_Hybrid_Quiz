@@ -464,11 +464,11 @@ How it contributes
 #LOGIN WINDOW 
       class LoginWindow:
       def __init__(self, root):
-            self.root = root
-            self.root.title("EA Quiz Login")
-            self.root.configure(bg="#1E90FF")  # Blue background
+          self.root = root
+          self.root.title("EA Quiz Login")
+           self.root.configure(bg="#1E90FF")  # Blue background
 
-            self.lm = LoginManager()           # Load users.csv
+          self.lm = LoginManager()           # Load users.csv
 
         #Username label + entry
         tk.Label(root, text="Username", bg="#1E90FF", fg="white", font=("Arial", 12)).pack(pady=5)
@@ -526,10 +526,10 @@ How it contributes
           CategoryDifficultySelector(selector_root, launch_quiz)
           selector_root.mainloop()
 #START APP
-    if __name__ == "__main__":
-         root = tk.Tk()
-         LoginWindow(root)
-         root.mainloop()
+if __name__ == "__main__":
+      root = tk.Tk()
+      LoginWindow(root)
+      root.mainloop()
 
 
 How it contributes
@@ -539,14 +539,68 @@ How it contributes
 
 
 ## 3.7 How all components work together
-+ 1 User opens app _Main.py_ launches login window.
-+ 2 LoginManager authenticates credentials _user proceeds_
-+ 3 QuizManager loads questions  _filters by category/difficulty_.
-+ 4 Tkinter or Streamlit displays questions _user interacts._
-+ 5 QuizManager.check() validates answers _accessible feedback shown._
-+ Final score is displayed  _quiz ends._
++ 1 User opens app Main.py   _launches login window.
++ 2 LoginManager authenticates credentials  _user proceeds_
++ 3 QuizManager loads questions   _filters by category/difficulty_.
++ 4 Tkinter or Streamlit displays questions  _user interacts._
++ 5 QuizManager.check() validates answers   _accessible feedback shown._
++ Final score is displayed    _quiz ends._
 
-## Testing Section
+
+## 4 Testing Section
+Testing was an essential part of developing the EA Hybrid Quiz, ensuring that the system behaved reliably, met functional requirements, and remained accessible to EA staff.  A combination of manual testing and automated unit testing was used to validate both the graphical interfaces (TKinter and Streamlit) and the underlying logic.  This blended approach ensured that the application was tested from both a user experience and code quality perspective.
+
+### 4.1 Testing strategy and methodology
+A systemic and strategic testing approach was adopted, combining two complementary methods.
+
+### 4.1.1 Manual testing (GUI focused)
+Manual testing was to validate:
+  + User interactions with both TKinter and Streamlit
+  + Navigation between screens
+  + Accessibility features (high contrast, readable fonts, keyboard navigation)
+  + Error message and input validation
+  + CSV loading behaviour
+  + Display image
+  + End of quiz and scoring
+
+### 4.1.2 Automatic unit testing (logic focused)
+Automated tests were written using Python's built-in _unittest_ frameworks.  These tests focused on:
++ Pure functions such as _QuizManager.check()_
++ CSV loading (smoke test)
++ Ensuring the question bank loads correctly.
+
+Unit testing ensured that the core logic remained stable as features were added incrementally.  This supports future continuous integration pipelines.
+
+### 4.1.3 Why this strategy was chosen
+
+| Method | Purpose  | Justificationd |
+| :---             |     :---:                                                |          ---: |
+| Manual Testing   | Validate GUI behaviour, accessibility, and user flow     | GUI requires human interaction to verify layout, readability, and usability    |
+| Unit testing     | Validate logic, ensure reliability, prevent regressions  | Pure function and data loading can be tested automatically and repeatedly     |
+
+### 4.2 Outcomes of application testing
+### 4.2.1 Manual testing results
+The table below summarises the outcomes of manual tests performed on both TKinter and Streamlit versions.
+
+| Test Case                       | Expected results                    | Actual result       |   Pass/Fail |  |
+| :---                            |     :---:                           |          ---:       |       ---:  |
+| Login with valid credentials    | User proceeds to welcome screen     | Works as expected   |   Pass     |
+| git diff                        | git diff                                | git diff      |
+
+| :---                            |     :---:                              |          ---: |
+| git status                      | git status                             | git status    |
+| git diff                       | git diff                                | git diff      |
+   | Left-aligned                | Center-aligned                           | Right-aligned |
+| :---                           |     :---:                                      |          ---: |
+| git status                     | git status                           | git status    |
+| git diff                       | git diff                                  | git diff      |
+
+| :---         |     :---:      |          ---: |
+| git status   | git status     | git status    |
+| git diff     | git diff       | git diff      |
+
+
+
 ### A third-level heading
 
 ## Documentation Section
