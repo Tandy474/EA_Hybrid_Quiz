@@ -121,11 +121,11 @@ _QuizManager_ handles loading questions from _CSV_ and checking answers.
 It can be used and reused by TKinter and Streamlit.
 
  #Loads questions from questions.csv and converts them into Question objects
-      import csv
-      from Question import Question
+        import csv
+        from Question import Question
 
-      class QuizManager:
-         def __init__(self, csv_path="questions.csv"):
+       class QuizManager:
+           def __init__(self, csv_path="questions.csv"):
            self.csv_path = csv_path                     # Path to CSV file
            self.questions = self.load_questions()       # Load all questions at startup
 
