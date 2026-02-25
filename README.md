@@ -452,15 +452,15 @@ How it contributes
 + Provides a web-based alternative interface.
 
 ### 3.6  Application Entry Point (main.py)
-#Controls the login flow, welcome screen, and launches the quiz
-
-  import tkinter as tk
-  from tkinter import messagebox
-  from login_manager import LoginManager
- from My_tkinter_app import CategoryDifficultySelector, launch_quiz
+  #Controls the login flow, welcome screen, and launches the quiz
+   
+   import tkinter as tk
+   from tkinter import messagebox
+   from login_manager import LoginManager
+   from My_tkinter_app import CategoryDifficultySelector, launch_quiz
 
 #LOGIN WINDOW 
- class LoginWindow:
+    class LoginWindow:
     def __init__(self, root):
         self.root = root
         self.root.title("EA Quiz Login")
@@ -492,14 +492,14 @@ How it contributes
         else:
             messagebox.showerror("Login Failed", "Incorrect username or password")
 
+     #WELCOME SCREEN 
     
-    #WELCOME SCREEN 
-        def open_welcome(self):
+     def open_welcome(self):
         welcome = tk.Tk()
         welcome.title("Welcome")
         welcome.configure(bg="#32CD32")  # Green background
 
-        #Welcome message
+     #Welcome message
         tk.Label(
             welcome,
             text="Welcome to the EA Hybrid Quiz!",
@@ -508,18 +508,17 @@ How it contributes
             font=("Arial", 16, "bold")
         ).pack(pady=20)
 
-        # Continue button
+    #Continue button
         tk.Button(
             welcome,
             text="Continue",
             font=("Arial", 14),
             command=lambda: self.open_category_screen(welcome)
         ).pack(pady=20)
-
         welcome.mainloop()
 
-    #Open category/difficulty selector
-     def open_category_screen(self, win):
+  #Open category/difficulty selector
+    def open_category_screen(self, win):
         win.destroy()
         selector_root = tk.Tk()
         CategoryDifficultySelector(selector_root, launch_quiz)
@@ -530,6 +529,7 @@ How it contributes
     root = tk.Tk()
     LoginWindow(root)
     root.mainloop()
+
 
 
 
