@@ -573,32 +573,30 @@ Unit testing ensured that the core logic remained stable as features were added 
 
 ### 4.1.3 Why this strategy was chosen
 
-| Method | Purpose  | Justificationd |
-| :---             |     :---:                                                |          ---: |
-| Manual Testing   | Validate GUI behaviour, accessibility, and user flow     | GUI requires human interaction to verify layout, readability, and usability    |
+| Method           | Purpose                                                  | Justification                                                                 |
+| :---             |          :---:                                           |                                                        --:                    |
+| Manual Testing   | Validate GUI behaviour, accessibility, and user flow     | GUI requires human interaction to verify layout, readability, and usability   |
 | Unit testing     | Validate logic, ensure reliability, prevent regressions  | Pure function and data loading can be tested automatically and repeatedly     |
 
 ### 4.2 Outcomes of application testing
 ### 4.2.1 Manual testing results
 The table below summarises the outcomes of manual tests performed on both TKinter and Streamlit versions.
 
-| Test Case                       | Expected results                    | Actual result       |   Pass/Fail |  |
-| :---                            |     :---:                           |          ---:       |       ---:  |
-| Login with valid credentials    | User proceeds to welcome screen     | Works as expected   |   Pass     |
-| git diff                        | git diff                                | git diff      |
 
-| :---                            |     :---:                              |          ---: |
-| git status                      | git status                             | git status    |
-| git diff                       | git diff                                | git diff      |
-   | Left-aligned                | Center-aligned                           | Right-aligned |
-| :---                           |     :---:                                      |          ---: |
-| git status                     | git status                           | git status    |
-| git diff                       | git diff                                  | git diff      |
+| Test Case                         | Expected Result                     | Actual Result         |Pass/Fail |
+| :---                              |     :---:                           |          ---:         |     ---: |
+| Login with valid credentials      |User proceeds to welcome screen      | Works as expected     |  Pass    |
+| Login with invalid credentials    | Error message displayed             | Error clearly shown   |  Pass    |           
+|Category selection                 | User must select a category         |Error shown if mssing  |  Pass    |           
+| Difficuly selection               | User must select difficulty         | Error shown if missing|  Pass    |           
+| Question loads correclty          | Text, options, appear               | All elements load     |  Pass    |           
+| Submit correct answer             | "Correct" feedback dsplayed         | Works                 |  Pass    |           
+| Submit incorrect answer           | Correct answer is displayed         | Works                 |  Pass    |           
+| Next button diasabled until submit| Prevents skipping                   | Works                 |  Pass    |           
+| End Quiz score                    | Score displayed accurately          | Works                 |  Pass    |           
+| TKinter image loading             |Image displayed if available         | Works                 |  Pass    |           
 
-| :---         |     :---:      |          ---: |
-| git status   | git status     | git status    |
-| git diff     | git diff       | git diff      |
-
+All manual tests passed successfully, demonstrating that the GUI behaves consistently and meets functional and accessibility requirements.
 
 
 ### A third-level heading
