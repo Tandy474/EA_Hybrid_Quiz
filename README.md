@@ -646,6 +646,49 @@ This demonstrates that:
   + The testing strategy successfully validated both the user experience and the logic, ensuring a suitable MVP for EA staff training.
 
 
+### 5 Documentation section
+  ### 5.1 User documentation for (EA)
+
+The EA Hybrid Quis has been designed to be simple, accessible, and intuitive for the Environments agency staff.  This section explains how to interact with the quiz, whether using the desktop (TKinter) version or the browser (Streamlit) version.
+
+  ### Getting started
+
+### Using the TKinter desktop version.
++1  Open the project folder on your EA laptop
++2  Run the application by double-clicking _main.py_
+      _python main.py_
++3  The login window will appear automatically
+
+
+### Using the Streamlit Web version
+  +1  Open a terminal in the project folder
+  +2  Run:
+      _streamlit run streamlit_app.py_
+  +3  Your default browser will open the quiz interface.
+
+
+### Logging In
+  +1  Enter your EA username and password (stored in _users.csv_)
+  +2  Select Login.
+  +3  If the credentials are incorrect, an accessible error message will appear.
+      This ensures only authorised staff can access the quiz.
+
+### Selecting a Quiz
+After logging in:
+  +1  Choose a category (e.g., EA Basic, Flooding, Pollution, Regulation).
+  +2  Choose a difficulty level (Easy, Medium, Hard)
+  +3  Select Start Quiz.
+      If either selection is missing, the system will display a clear error message.
+
+
+### Answering Questions
+  +1  Read the question text
+  +2 Select your answer
+        + Tkinter:  _dropdown menu_
+        + Streamlit : _radio buttons_
+  +3 Select Submit
+      You will re
+
 ### A third-level heading
 
 ## Documentation Section
