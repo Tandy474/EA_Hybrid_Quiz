@@ -702,8 +702,10 @@ You can then close the application.
 ## 5.1 Technical Documentation (for Developers)
 This section explains how to run tests locally, understand the project structure, and interpret the main components of the codebase.
 
-### Project Structure
+
 ```
+### Project Structure
+
 EA_Hybrid_Quiz
   README.md
   
@@ -725,9 +727,9 @@ login_manager.py       # Authentication logic
     test_quiz.py         # Unit tests
   questions.csv          # Quiz data
   users.csv              # Login credentials
-```
-This modular structure separates logic, data, and interface layers, making the system easier to maintain and extend.
 
+This modular structure separates logic, data, and interface layers, making the system easier to maintain and extend.
+```
 
 
 
