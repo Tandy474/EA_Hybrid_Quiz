@@ -388,10 +388,9 @@ Streamlit provides a browser-based interface with built-in accessibility feature
 
     qm = QuizManager()      # handles questions and answers
     lm = LoginManager()     # handles login authentication
-
-   def main():
-  
-    #Track login state
+    
+    def main():
+      #Track login state
       if "logged_in" not in st.session_state:
         st.session_state.logged_in = False
 
@@ -400,12 +399,12 @@ Streamlit provides a browser-based interface with built-in accessibility feature
         username = st.text_input("Username")                     # user enters name
         password = st.text_input("Password", type="password")    # hidden password field
 
-      if st.button("Login") and lm.authenticate(username, password):
+       if st.button("Login") and lm.authenticate(username, password):
             st.session_state.logged_in = True                    # mark user as logged in
             st.experimental_rerun()                              # reload quiz screen
         return
 
-    st.title("EA Hybrid Quiz")
+     st.title("EA Hybrid Quiz")
 
     #Initialise score and question counter
     
@@ -430,10 +429,10 @@ Streamlit provides a browser-based interface with built-in accessibility feature
         return
 
     #Get next question in the shuffled list
-    q = st.session_state.question_list[st.session_state.q_count]
+     q = st.session_state.question_list[st.session_state.q_count]
 
     #Display question and options
-    choice = st.radio(q.text, q.options)                         # user selects an answer
+     choice = st.radio(q.text, q.options)                         # user selects an answer
 
     #Submit button checks answer
      if st.button("Submit"):
@@ -445,7 +444,7 @@ Streamlit provides a browser-based interface with built-in accessibility feature
 
         st.session_state.q_count += 1                            # move to next question
         st.experimental_rerun()                                  # refresh page
-   main()
+     main()
 
 How it contributes
 + Automatically handles layout accessibility
