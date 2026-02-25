@@ -99,17 +99,17 @@ The EA Hybrid Quiz was developed using Python and follows a modular object-orien
 The _Question_ class represents a single question.  It stores the text, answer options, correct answer, difficulty, and category 
 
  #Defines a simple Question object to store each quiz question
-  from dataclasses import dataclass
-  from typing import List, Optional
+    from dataclasses import dataclass
+    from typing import List, Optional
 
-@dataclass
- class Question:
-    text: str                 # The question text
-    options: List[str]        # List of answer choices
-    answer: str               # Correct answer
-    difficulty: str           # Difficulty level
-    category: str             # Category (EA Basics, Flooding, etc.)
-    image: Optional[str] = None  # Optional image filename
+    @dataclass
+    class Question:
+         text: str                 # The question text
+         options: List[str]        # List of answer choices
+         answer: str               # Correct answer
+         difficulty: str           # Difficulty level
+         category: str             # Category (EA Basics, Flooding, etc.)
+        image: Optional[str] = None  # Optional image filename
 
 How the _Question_ contributes to the system:
 + Provides a structured data model for each question.
