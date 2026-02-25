@@ -699,17 +699,17 @@ At the end, your score is displayed:
     _Your Score: X/5
 You can then close the application.
 
+
 ## 5.1 Technical Documentation (for Developers)
 This section explains how to run tests locally, understand the project structure, and interpret the main components of the codebase.
 
 
-```
 ### Project Structure
 
 EA_Hybrid_Quiz
   README.md
   
-main.py                # Entry point for Tkinter version
+ main.py                # Entry point for Tkinter version
  
  My_tkinter_app.py      # Tkinter GUI implementation
   
@@ -729,7 +729,7 @@ login_manager.py       # Authentication logic
   users.csv              # Login credentials
 
 This modular structure separates logic, data, and interface layers, making the system easier to maintain and extend.
-```
+
 
 
 
