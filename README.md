@@ -481,26 +481,28 @@ How it contributes
         self.password_entry.pack(pady=5)
 
         #Login button
-          tk.Button(root, text="Login", font=("Arial", 12), command=self.try_login).pack(pady=10)
+        tk.Button(root, text="Login", font=("Arial", 12), command=self.try_login).pack(pady=10)
 
     #Validate login credentials
-     def try_login(self):
-        username = self.username_entry.get()
-        password = self.password_entry.get()
+      def try_login(self):
+          username = self.username_entry.get()
+          password = self.password_entry.get()
 
-        if self.lm.authenticate(username, password):
+       if self.lm.authenticate(username, password):
             self.root.destroy()
             self.open_welcome()
-        else:
+      else:
             messagebox.showerror("Login Failed", "Incorrect username or password")
+            
         #WELCOME SCREEN 
       def open_welcome(self):
-        welcome = tk.Tk()
-        welcome.title("Welcome")
-        welcome.configure(bg="#32CD32")  # Green background
+         welcome = tk.Tk()
+         welcome.title("Welcome")
+         welcome.configure(bg="#32CD32")  # Green background
+
 
         #Welcome message
-          tk.Label(
+         tk.Label(
             welcome,
             text="Welcome to the EA Hybrid Quiz!",
             bg="#32CD32",
@@ -514,6 +516,7 @@ How it contributes
             font=("Arial", 14),
             command=lambda: self.open_category_screen(welcome)
         ).pack(pady=20)
+
 
         welcome.mainloop()
     #Open category/difficulty selector
@@ -535,7 +538,13 @@ How it contributes
   + Supports accessibility by ensuring predictable navigation(AR2)
 
 
-
+## 3.7 How all components work together
++ 1 User opens app _Main.py_ launches login window.
++ 2 LoginManager authenticates credentials _user proceeds_
++ 3 QuizManager loads questions  _filters by category/difficulty_.
++ 4 Tkinter or Streamlit displays questions _user interacts._
++ 5 QuizManager.check() validates answers _accessible feedback shown._
++ Final score is displayed  _quiz ends._
 
 ## Testing Section
 ### A third-level heading
