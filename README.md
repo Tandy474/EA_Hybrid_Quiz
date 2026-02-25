@@ -166,8 +166,8 @@ How it contributes
 
 
 ### 3.3 LoginManager (login_Manager.py)
-```The LoginManager handles user authentication _users.csv_
- 
+The LoginManager handles user authentication _users.csv_
+``` 
   #user authentication by checking users.csv
 
     import csv
@@ -196,10 +196,10 @@ How it contributes
 
 ### 3.4 TKinter Interface (My_TKinter_app.py)
 The TKinter provides a desktop-style GUI for EA laptops
-
+```
 #My Tkinter quiz application with category selection, difficulty filtering,
 #image support, correct/wrong answer messages, and Next button flow.
-```
+
 
     import tkinter as tk
     from tkinter import ttk, messagebox
@@ -378,8 +378,8 @@ How it contributes
 ### 3.5 Streamlit Interface (streamlit_app.py)
 
 Streamlit provides a browser-based interface with built-in accessibility features such as responsive layout, keyboard navigation, and screen-reader compatibility.
-```
 
+```
       import streamlit as st
       import random
       from quiz_manager import QuizManager
@@ -443,7 +443,9 @@ Streamlit provides a browser-based interface with built-in accessibility feature
 
           st.session_state.q_count += 1                            # move to next question
           st.experimental_rerun()                                  # refresh page
-```    main()
+    main()
+```
+
 
 How it contributes
 + Automatically handles layout accessibility
@@ -455,8 +457,8 @@ How it contributes
 
 
 #Controls the login flow, welcome screen, and launches the quiz
-```
 
+```
        import tkinter as tk
        from tkinter import messagebox
        from login_manager import LoginManager
@@ -532,6 +534,7 @@ if __name__ == "__main__":
       root.mainloop()
 ```
 
+
 How it contributes
   + Controls the full journey
   + Ensures a clean transition between login -- selection -- quiz
@@ -574,7 +577,7 @@ Unit testing ensured that the core logic remained stable as features were added 
 ### 4.1.3 Why this strategy was chosen
 
 | Method           | Purpose                                                  | Justification                                                                 |
-| :---             |          :---:                                           |                                                        --:                    |
+| :---             | :---:                                                    |  --:                                                                          |
 | Manual Testing   | Validate GUI behaviour, accessibility, and user flow     | GUI requires human interaction to verify layout, readability, and usability   |
 | Unit testing     | Validate logic, ensure reliability, prevent regressions  | Pure function and data loading can be tested automatically and repeatedly     |
 
@@ -584,7 +587,7 @@ The table below summarises the outcomes of manual tests performed on both TKinte
 
 
 | Test Case                         | Expected Result                     | Actual Result         |Pass/Fail |
-| :---                              | :---:                               | ---:                  | ---: |
+| :---                              | :---:                               | ---:                  | ---:     |
 | Login with valid credentials      |User proceeds to welcome screen      | Works as expected     |  Pass    |
 | Login with invalid credentials    | Error message displayed             | Error clearly shown   |  Pass    |           
 |Category selection                 | User must select a category         |Error shown if mssing  |  Pass    |           
@@ -605,7 +608,6 @@ Unit tests were executed using:
 ###  Unit test code (test_quiz.py) 
      import unittest
      from quiz_manager import QuizManager
-
 #SMOKE TEST: ensures the QuizManager loads without crashing
 
      class TestSmoke(unittest.TestCase):
@@ -626,7 +628,6 @@ Unit tests were executed using:
 #RUN ALL TESTS
   if __name__ == "__main__":
     unittest.main()
-
 ```
 
 
