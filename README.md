@@ -460,8 +460,8 @@ How it contributes
     from My_tkinter_app import CategoryDifficultySelector, launch_quiz
 
 #LOGIN WINDOW 
-    class LoginWindow:
-    def __init__(self, root):
+   class LoginWindow:
+  def __init__(self, root):
         self.root = root
         self.root.title("EA Quiz Login")
         self.root.configure(bg="#1E90FF")  # Blue background
@@ -479,25 +479,26 @@ How it contributes
         self.password_entry.pack(pady=5)
 
         # Login button
-        tk.Button(root, text="Login", font=("Arial", 12), command=self.try_login).pack(pady=10)
+         tk.Button(root, text="Login", font=("Arial", 12), command=self.try_login).pack(pady=10)
 
     # Validate login credentials
       def try_login(self):
-        username = self.username_entry.get()
-        password = self.password_entry.get()
+         username = self.username_entry.get()
+         password = self.password_entry.get()
 
         if self.lm.authenticate(username, password):
             self.root.destroy()
             self.open_welcome()
         else:
-            messagebox.showerror("Login Failed", "Incorrect username or password")
+          messagebox.showerror("Login Failed", "Incorrect username or password")
+          
    #WELCOME SCREEN 
       def open_welcome(self):
         welcome = tk.Tk()
         welcome.title("Welcome")
         welcome.configure(bg="#32CD32")  # Green background
 
-        #Welcome message
+     #Welcome message
         tk.Label(
             welcome,
             text="Welcome to the EA Hybrid Quiz!",
@@ -513,9 +514,7 @@ How it contributes
             font=("Arial", 14),
             command=lambda: self.open_category_screen(welcome)
         ).pack(pady=20)
-
         welcome.mainloop()
-
      Open category/difficulty selector
      def open_category_screen(self, win):
         win.destroy()
