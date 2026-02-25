@@ -640,14 +640,14 @@ This demonstrates that:
   + The answer checking function works as intended
 
 
-### Summary of testing outcomes
-  +  All manual tests passed, confirming that the GUI behaves correctly
+###  Summary of testing outcomes
+  + All manual tests passed, confirming that the GUI behaves correctly
   + All unit tests passed, confirming that the core logic is stable and reliable.
   + The testing strategy successfully validated both the user experience and the logic, ensuring a suitable MVP for EA staff training.
 
 
 ### 5 Documentation section
-  ### 5.1 User documentation for (EA)
+ ### 5.1 User documentation for (EA)
 
 The EA Hybrid Quis has been designed to be simple, accessible, and intuitive for the Environments agency staff.  This section explains how to interact with the quiz, whether using the desktop (TKinter) version or the browser (Streamlit) version.
 
