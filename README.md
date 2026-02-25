@@ -391,15 +391,15 @@ Streamlit provides a browser-based interface with built-in accessibility feature
     
     def main():
       #Track login state
-      if "logged_in" not in st.session_state:
+    if "logged_in" not in st.session_state:
         st.session_state.logged_in = False
 
     #Login screen
-      if not st.session_state.logged_in:
+    if not st.session_state.logged_in:
         username = st.text_input("Username")                     # user enters name
         password = st.text_input("Password", type="password")    # hidden password field
 
-       if st.button("Login") and lm.authenticate(username, password):
+      if st.button("Login") and lm.authenticate(username, password):
             st.session_state.logged_in = True                    # mark user as logged in
             st.experimental_rerun()                              # reload quiz screen
         return
@@ -461,7 +461,7 @@ How it contributes
 
 #LOGIN WINDOW 
    class LoginWindow:
-  def __init__(self, root):
+   def __init__(self, root):
         self.root = root
         self.root.title("EA Quiz Login")
         self.root.configure(bg="#1E90FF")  # Blue background
