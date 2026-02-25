@@ -628,14 +628,17 @@ Unit tests were executed using:
 #RUN ALL TESTS
   if __name__ == "__main__":
     unittest.main()
+
+```
+<img width="505" height="117" alt="image" src="https://github.com/user-attachments/assets/6cff7e87-9de4-4fa8-bdb6-8d998939c561" />
+
 ```
 
-<img width="386" height="221" alt="image" src="https://github.com/user-attachments/assets/f718beeb-6586-4694-8e7e-ceb904f1910e" />
-```
 This demonstrates that:
   + The logic behaves predictably
   +  The question bank loads correctly
   + The answer checking function works as intended
+
 
 ### Summary of testing outcomes
   +  All manual tests passed, confirming that the GUI behaves correctly
