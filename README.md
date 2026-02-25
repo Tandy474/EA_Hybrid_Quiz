@@ -646,12 +646,12 @@ This demonstrates that:
   + The testing strategy successfully validated both the user experience and the logic, ensuring a suitable MVP for EA staff training.
 
 
-### 5 Documentation section
- ### 5.1 User documentation for (EA)
+### 5 Documentation Section
+### 5.1 User documentation for (EA)
 
 The EA Hybrid Quis has been designed to be simple, accessible, and intuitive for the Environments agency staff.  This section explains how to interact with the quiz, whether using the desktop (TKinter) version or the browser (Streamlit) version.
 
-  ### Getting started
+### Getting started
 
 ### Using the TKinter desktop version.
   1.  Open the project folder on your EA laptop
