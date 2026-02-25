@@ -684,33 +684,25 @@ After logging in:
 ### Answering Questions
   1.  Read the question text
   2. Select your answer
-        + Tkinter:  _dropdown menu_
-        + Streamlit : _radio buttons_
+        +Tkinter:  _dropdown menu_
+        +Streamlit : _radio buttons_
   3. Select Submit
       You will receive immediate feedback:
-        + Correct: green success message.
-        + Incorrect: message showing the correct answer
+        +Correct: green success message.
+        +Incorrect: message showing the correct answer
           Feedback is text-based to support accessibility.
 
 
-### A third-level heading
+### Navigating the Quiz
+* Select Next to move to the next question
+* You cannot change your answer once submitted
+* The quiz continues until all questions are completed.
 
-## Documentation Section
+### Finishing the Quiz
+At the end, your score is displayed:
+    _Quiz Complete!_
+    _Your Score: X/5
+You can then close the application.
 
-## Evaluation Section
-
-## A second-level heading
-
-## A second-level heading
-
-
-## A second-level heading
-
-# A first-level heading
-## A second-level heading
-### A third-level heading
-
-6 Evaluation
-
-
+### 4.2.1 Manual testing results
 
