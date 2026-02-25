@@ -119,7 +119,7 @@ How the _Question_ contributes to the system:
 ### 3.2 QuizManager(quiz_manager.py)
 _QuizManager_ handles loading questions from _CSV_ and checking answers.
 It can be used and reused by TKinter and Streamlit.
-
+```
  #Loads questions from questions.csv and converts them into Question objects
           
            import csv
@@ -153,7 +153,7 @@ It can be used and reused by TKinter and Streamlit.
 
        def check(self, user_answer, correct_answer):
            return user_answer == correct_answer          # Returns True if correct
-
+```
 
 
 
@@ -166,7 +166,7 @@ How it contributes
 
 
 ### 3.3 LoginManager (login_Manager.py)
-The LoginManager handles user authentication _users.csv_
+```The LoginManager handles user authentication _users.csv_
  
   #user authentication by checking users.csv
 
@@ -186,7 +186,7 @@ The LoginManager handles user authentication _users.csv_
 
      def authenticate(self, username, password):
         return username in self.users and self.users[username] == password
-
+```
 
  How it contributes
    +Implents secure login (FR1)
@@ -199,7 +199,7 @@ The TKinter provides a desktop-style GUI for EA laptops
 
 #My Tkinter quiz application with category selection, difficulty filtering,
 #image support, correct/wrong answer messages, and Next button flow.
-
+```
 
     import tkinter as tk
     from tkinter import ttk, messagebox
@@ -368,7 +368,7 @@ The TKinter provides a desktop-style GUI for EA laptops
         quiz_root = tk.Tk()  # Create quiz window
         TkQuizApp(quiz_root, category, difficulty)
         quiz_root.mainloop()
-
+```
 
 How it contributes
   + Provides a fully interactive GUI (FR1 -FR9)
@@ -378,7 +378,7 @@ How it contributes
 ### 3.5 Streamlit Interface (streamlit_app.py)
 
 Streamlit provides a browser-based interface with built-in accessibility features such as responsive layout, keyboard navigation, and screen-reader compatibility.
-
+```
 
       import streamlit as st
       import random
@@ -443,7 +443,7 @@ Streamlit provides a browser-based interface with built-in accessibility feature
 
           st.session_state.q_count += 1                            # move to next question
           st.experimental_rerun()                                  # refresh page
-       main()
+```    main()
 
 How it contributes
 + Automatically handles layout accessibility
@@ -455,7 +455,7 @@ How it contributes
 
 
 #Controls the login flow, welcome screen, and launches the quiz
-
+```
 
        import tkinter as tk
        from tkinter import messagebox
@@ -530,7 +530,7 @@ if __name__ == "__main__":
       root = tk.Tk()
       LoginWindow(root)
       root.mainloop()
-
+```
 
 How it contributes
   + Controls the full journey
@@ -601,36 +601,33 @@ All manual tests passed successfully, demonstrating that the GUI behaves consist
 ### 4.2.2 Unit testing outcomes
 Unit tests were executed using:
   python m unittest
-
+```
 ###  Unit test code (test_quiz.py) 
      import unittest
      from quiz_manager import QuizManager
 
 #SMOKE TEST: ensures the QuizManager loads without crashing
 
-    class TestSmoke(unittest.TestCase):
-        def test_quiz_manager_loads(self):
+     class TestSmoke(unittest.TestCase):
+         def test_quiz_manager_loads(self):
             qm = QuizManager()   # Should not raise any exceptions
             self.assertIsNotNone(qm.questions)  # Questions list should exist
             self.assertGreater(len(qm.questions), 0)  # Should load at least 1 question
 
 #LOGIC TESTS: ensures answer checking works correctly
-
- class TestQuizLogic(unittest.TestCase):
-    def test_check_correct(self):
+   class TestQuizLogic(unittest.TestCase):
+      def test_check_correct(self):
         qm = QuizManager()
         self.assertTrue(qm.check("A", "A"))  # Same answer → True
 
-    def test_check_incorrect(self):
+     def test_check_incorrect(self):
         qm = QuizManager()
         self.assertFalse(qm.check("B", "A"))  # Different answer → False
-
 #RUN ALL TESTS
-
-if __name__ == "__main__":
+  if __name__ == "__main__":
     unittest.main()
 
-
+```
 
 
 
