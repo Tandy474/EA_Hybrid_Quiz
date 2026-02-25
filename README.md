@@ -645,8 +645,7 @@ This demonstrates that:
   + All unit tests passed, confirming that the core logic is stable and reliable.
   + The testing strategy successfully validated both the user experience and the logic, ensuring a suitable MVP for EA staff training.
 
-
-### 5 Documentation Section
+##  5 Documentation Section
 ### 5.1 User documentation for (EA)
 
 The EA Hybrid Quis has been designed to be simple, accessible, and intuitive for the Environments agency staff.  This section explains how to interact with the quiz, whether using the desktop (TKinter) version or the browser (Streamlit) version.
@@ -659,13 +658,11 @@ The EA Hybrid Quis has been designed to be simple, accessible, and intuitive for
         _python main.py_
   3.  The login window will appear automatically
 
-
 ### Using the Streamlit Web version
   1.  Open a terminal in the project folder
   2.  Run:
           _streamlit run streamlit_app.py_
   3.  Your default browser will open the quiz interface.
-
 
 ### Logging In
   1.  Enter your EA username and password (stored in _users.csv_)
@@ -680,7 +677,6 @@ After logging in:
   3.  Select Start Quiz.
       If either selection is missing, the system will display a clear error message.
 
-
 ### Answering Questions
   1.  Read the question text
   2. Select your answer
@@ -691,7 +687,6 @@ After logging in:
         +Correct: green success message.
         +Incorrect: message showing the correct answer
           Feedback is text-based to support accessibility.
-
 
 ### Navigating the Quiz
 * Select Next to move to the next question
@@ -704,5 +699,35 @@ At the end, your score is displayed:
     _Your Score: X/5
 You can then close the application.
 
-### 4.2.1 Manual testing results
+## 5.1 Technical Documentation (for Developers)
+This section explains how to run tests locally, understand the project structure, and interpret the main components of the codebase.
+
+### Project Structure
+```
+EA_Hybrid_Quiz
+  README.md
+  
+main.py                # Entry point for Tkinter version
+ 
+ My_tkinter_app.py      # Tkinter GUI implementation
+  
+streamlit_app.py       # Streamlit web interface
+ 
+ quiz_manager.py        # Core quiz logic (loading questions, checking answers)
+  
+login_manager.py       # Authentication logic
+ 
+ Question.py            # Dataclass model for questions
+ 
+
+ tests
+    __init__.py
+    test_quiz.py         # Unit tests
+  questions.csv          # Quiz data
+  users.csv              # Login credentials
+```
+This modular structure separates logic, data, and interface layers, making the system easier to maintain and extend.
+
+
+
 
