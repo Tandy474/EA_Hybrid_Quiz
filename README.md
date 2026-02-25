@@ -200,14 +200,15 @@ The TKinter provides a desktop-style GUI for EA laptops
 #My Tkinter quiz application with category selection, difficulty filtering,
 #image support, correct/wrong answer messages, and Next button flow.
 
-   import tkinter as tk
-   from tkinter import ttk, messagebox
-   from tkinter import PhotoImage
-   import os
-   import random
-   from quiz_manager import QuizManager
 
-   class CategoryDifficultySelector:
+    import tkinter as tk
+    from tkinter import ttk, messagebox
+    from tkinter import PhotoImage
+    import os
+    import random
+    from quiz_manager import QuizManager
+
+    class CategoryDifficultySelector:
       def __init__(self, root, start_quiz_callback):
           self.root = root
           self.start_quiz_callback = start_quiz_callback
