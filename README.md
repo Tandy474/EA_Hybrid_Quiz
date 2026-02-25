@@ -120,38 +120,42 @@ How the _Question_ contributes to the system:
 _QuizManager_ handles loading questions from _CSV_ and checking answers.
 It can be used and reused by TKinter and Streamlit.
 
-#Loads questions from questions.csv and converts them into Question objects
-import csv
-from Question import Question
+ #Loads questions from questions.csv and converts them into Question objects
+   import csv
+   from Question import Question
 
-class QuizManager:
-    def __init__(self, csv_path="questions.csv"):
-        self.csv_path = csv_path                     # Path to CSV file
-        self.questions = self.load_questions()       # Load all questions at startup
+   class QuizManager:
+        def __init__(self, csv_path="questions.csv"):
+           self.csv_path = csv_path                     # Path to CSV file
+           self.questions = self.load_questions()       # Load all questions at startup
 
-    def load_questions(self):
-        questions = []                               # List to store Question objects
+       def load_questions(self):
+           questions = []                               # List to store Question objects
 
        
-        with open(self.csv_path, "r", encoding="utf-8-sig") as f:
-            reader = csv.DictReader(f)               # Reads CSV rows as dictionaries
+           with open(self.csv_path, "r", encoding="utf-8-sig") as f:
+                reader = csv.DictReader(f)               # Reads CSV rows as dictionaries
 
-            for row in reader:
-                # Create a Question object from each CSV row
-                q = Question(
-                    text=row["text"],
-                    options=row["options"].split(";"),
-                    answer=row["answer"],
-                    difficulty=row["difficulty"],
-                    category=row["category"],
-                    image=row["image"] or None
-                )
-                questions.append(q)
+               for row in reader:
+         #Create a Question object from each CSV row
+                 q = Question(
+                     text=row["text"],
+                     options=row["options"].split(";"),
+                     answer=row["answer"],
+                     difficulty=row["difficulty"],
+                     category=row["category"],
+                     image=row["image"] or None
+                  )
+                  questions.append(q)
 
-        return questions                              # Return all loaded questions
+           return questions                              # Return all loaded questions
 
-    def check(self, user_answer, correct_answer):
-        return user_answer == correct_answer          # Returns True if correct
+       def check(self, user_answer, correct_answer):
+           return user_answer == correct_answer          # Returns True if correct
+
+
+
+
 
 +How it contributes
   + Loads data (FR2) from _CSV_
