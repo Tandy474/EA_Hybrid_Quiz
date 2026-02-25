@@ -381,21 +381,21 @@ How it contributes
 Streamlit provides a browser-based interface with built-in accessibility features such as responsive layout, keyboard navigation, and screen-reader compatibility.
 
 
-    import streamlit as st
-    import random
-    from quiz_manager import QuizManager
-    from login_manager import LoginManager
+      import streamlit as st
+      import random
+      from quiz_manager import QuizManager
+      from login_manager import LoginManager
 
-    qm = QuizManager()      # handles questions and answers
-    lm = LoginManager()     # handles login authentication
+      qm = QuizManager()      # handles questions and answers
+      lm = LoginManager()     # handles login authentication
     
-    def main():
+     def main():
       #Track login state
-    if "logged_in" not in st.session_state:
+     if "logged_in" not in st.session_state:
         st.session_state.logged_in = False
 
     #Login screen
-    if not st.session_state.logged_in:
+     if not st.session_state.logged_in:
         username = st.text_input("Username")                     # user enters name
         password = st.text_input("Password", type="password")    # hidden password field
 
@@ -527,10 +527,10 @@ class LoginWindow:
         selector_root.mainloop()
 
 #START APP
-if __name__ == "__main__":
-    root = tk.Tk()
-    LoginWindow(root)
-    root.mainloop()
+   if __name__ == "__main__":
+      root = tk.Tk()
+      LoginWindow(root)
+      root.mainloop()
 
 
 Contribution
