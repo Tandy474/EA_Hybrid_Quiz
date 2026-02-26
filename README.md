@@ -733,19 +733,14 @@ This modular structure separates logic, data, and interface layers, making the s
 ### 6 Evaluation Section
 The development of the EA Hybrid Quiz was an insightful process, reflecting on its highlights of the MVP of the final product and the areas where further refinement would have strengthened the outcome.  The project followed a full project software-development lifecycle, from early prototyping in Figma to implementation, testing, and documentation.  This section evaluates what went well, what could have been improved and how the experience contributes to future development practice. 
 
-### 6.1 What went well
+###  6.1 What went well
+Several aspects of the project progressed smoothly and contributed to a stable and  accessible, and maintainable product.
+
   + ### Clear modular architecture
-  Separating the system into _QuizManager_, _LoginManager_, _Question_  two independent interfaces _(TKinter and Streamlit)_ made the codebase easier to understand and extend.  This approach aligns with widely accepted software-engineering principles such as separation of concerns and modularity, as described in the 6. Evaluation
-The development of the EA Hybrid Quiz was a constructive and insightful process, and reflecting on it highlights both the strengths of the final product and the areas where further refinement would have strengthened the outcome. The project followed a full software‑development lifecycle, from early prototyping in Figma to implementation, testing, and documentation. This section evaluates what went well, what could have been improved, and how the experience contributes to future development practice. Hyperlinks are included in line with software‑documentation conventions.
-
-### What Went Well
-Several aspects of the project progressed smoothly and contributed to a stable, accessible, and maintainable product.
-
-* ### Clear modular architecture
-Separating the system into QuizManager, LoginManager, Question, and two independent interfaces (Tkinter and Streamlit) made the codebase easier to understand and extend. This approach aligns with widely accepted software‑engineering principles such as separation of concerns and modularity, as described in the [https://PythonSoftwareEngineering Guidelines](https://peps.python.org/pep-0008).
+  Separating the system into _QuizManager,_ _LoginManager,_  _Question,_  and two independent interfaces _(TKinter and Streamlit)_ made the codebase easier to understand and extend.  This approach aligns with widely accepted software-engineering principles such as separation of concerns and modularity, as described in the [https://PythonSoftwareEngineering Guidelines](https://peps.python.org/pep-0008).
 
 * ###  Effective use of prototyping tools
-  Creating early wireframes in Figma helped visualise the user journey and identify accessibility considerations before coding began.  This reduced rework and ensured the interface aligned with EA accessibility expectations.  Figma's collaborative features also supported iterative refinement.
+  Creating early wireframes in Figma helped to map out the user journey and identify accessibility considerations before coding began.  This reduced rework and ensured the interface aligned with EA accessibility expectations.  Figma's collaborative features also supported iterative refinement.
 
   * ###  Accessibility embedded throughout
     The project consistently applied principles, including high contrast colours, readable typography, keyboard navigation and text back feedback.        These decisions align with UK Government Accessible guidelines and the EA's commitment to inclusive digital services:   https://www.gov.uk/guidance/accessibility-requirements-for-public-sector-websites-and-apps.
@@ -753,5 +748,16 @@ Separating the system into QuizManager, LoginManager, Question, and two independ
   * Testing was robust and balanced
   * CSV storage kept the system lightweight
  
-* 
-### 7 Conclusion
+### 6.2 What could be improved
+Although the project met the MVP goals, several areas could be enhanced in future iterations.
+
+  ### More advanced authentication
+  The login is functional and basic.  A more secure approach  like  hashed passwords would improve security and align with best practice guidance from the OWASP Authentication cheatsheet could inform future improvements.https://owasp.org/www-project-cheat-sheets/
+
+  * More unit tests could be added
+  * Additional question types could  enhance engagement
+  * Enabling users to create their own username and password to access the system
+
+### 6.3 Reflection
+Building this project highlighted how even a small application benefits from clear architecture, testing, and documentation.  This dual interface reinforced the value of separating concerns, and focus on accessibility made the design more thoughtful and user-centred.  There is room for improvement.  The EA Hybrid Quiz system successfully delivers an accessible and training tool for staff, with both desktop interfaces, a modular architecture and documentation ready for deployment and future expansion.
+
