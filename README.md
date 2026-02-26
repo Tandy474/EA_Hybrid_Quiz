@@ -594,7 +594,7 @@ The table below summarises the outcomes of manual tests performed on both TKinte
 | Difficuly selection               | User must select difficulty         | Error shown if missing|  Pass    |           
 | Question loads correclty          | Text, options, appear               | All elements load     |  Pass    |           
 | Submit correct answer             | "Correct" feedback dsplayed         | Works                 |  Pass    |           
-| Submit incorrect answer           | Correct answer is displayed         | Works                 |  Pass    |           
+| Submit incorrect answer           | Incorrect answer is popup           | Works                 |  Pass    |           
 | Next button diasabled until submit| Prevents skipping                   | Works                 |  Pass    |           
 | End Quiz score                    | Score displayed accurately          | Works                 |  Pass    |           
 | TKinter image loading             |Image displayed if available         | Works                 |  Pass    |           
@@ -633,8 +633,6 @@ Unit tests were executed using:
 <img width="505" height="117" alt="image" src="https://github.com/user-attachments/assets/6cff7e87-9de4-4fa8-bdb6-8d998939c561" />
 
 
-
-
 This demonstrates that:
   + The logic behaves predictably
   +  The question bank loads correctly
@@ -646,7 +644,7 @@ This demonstrates that:
   + The testing strategy successfully validated both the user experience and the logic, ensuring a suitable MVP for EA staff training.
 
 
-##  5 Documentation Section
+###  5 Documentation Section
 ### 5.1 User documentation for (EA)
 
 The EA Hybrid Quis has been designed to be simple, accessible, and intuitive for the Environments agency staff.  This section explains how to interact with the quiz, whether using the desktop (TKinter) version or the browser (Streamlit) version.
@@ -701,7 +699,7 @@ At the end, your score is displayed:
 You can then close the application.
 
 
-## 5.1 Technical Documentation (for Developers)
+### 5.2 Technical Documentation (for Developers)
 This section explains how to run tests locally, understand the project structure, and interpret the main components of the codebase.
 
 
@@ -710,27 +708,50 @@ This section explains how to run tests locally, understand the project structure
 EA_Hybrid_Quiz
   README.md
   
- main.py                # Entry point for Tkinter version
+ main.py                      # Entry point for Tkinter version
  
- My_tkinter_app.py      # Tkinter GUI implementation
+ My_tkinter_app.py            # Tkinter GUI implementation
   
-streamlit_app.py       # Streamlit web interface
+streamlit_app.py               # Streamlit web interface
  
- quiz_manager.py        # Core quiz logic (loading questions, checking answers)
+ quiz_manager.py              # Core quiz logic (loading questions, checking answers)
   
-login_manager.py       # Authentication logic
+login_manager.py             # Authentication logic
  
- Question.py            # Dataclass model for questions
+ Question.py                  # Dataclass model for questions
  
 
  tests
     __init__.py
-    test_quiz.py         # Unit tests
-  questions.csv          # Quiz data
-  users.csv              # Login credentials
+    test_quiz.py           # Unit tests
+  questions.csv            # Quiz data
+  users.csv                # Login credentials
 
 This modular structure separates logic, data, and interface layers, making the system easier to maintain and extend.
 
 
+### 6 Evaluation Section
+The development of the EA Hybrid Quiz was an insightful process, reflecting on its highlights of the MVP of the final product and the areas where further refinement would have strengthened the outcome.  The project followed a full project software-development lifecycle, from early prototyping in Figma to implementation, testing, and documentation.  This section evaluates what went well, what could have been improved and how the experience contributes to future development practice. 
 
+### 6.1 What went well
+  + ### Clear modular architecture
+  Separating the system into _QuizManager_, _LoginManager_, _Question_  two independent interfaces _(TKinter and Streamlit)_ made the codebase easier to understand and extend.  This approach aligns with widely accepted software-engineering principles such as separation of concerns and modularity, as described in the 6. Evaluation
+The development of the EA Hybrid Quiz was a constructive and insightful process, and reflecting on it highlights both the strengths of the final product and the areas where further refinement would have strengthened the outcome. The project followed a full software‑development lifecycle, from early prototyping in Figma to implementation, testing, and documentation. This section evaluates what went well, what could have been improved, and how the experience contributes to future development practice. Hyperlinks are included in line with software‑documentation conventions.
 
+### What Went Well
+Several aspects of the project progressed smoothly and contributed to a stable, accessible, and maintainable product.
+
+* ### Clear modular architecture
+Separating the system into QuizManager, LoginManager, Question, and two independent interfaces (Tkinter and Streamlit) made the codebase easier to understand and extend. This approach aligns with widely accepted software‑engineering principles such as separation of concerns and modularity, as described in the [https://PythonSoftwareEngineering Guidelines](https://peps.python.org/pep-0008).
+
+* ###  Effective use of prototyping tools
+  Creating early wireframes in Figma helped visualise the user journey and identify accessibility considerations before coding began.  This reduced rework and ensured the interface aligned with EA accessibility expectations.  Figma's collaborative features also supported iterative refinement.
+
+  * ###  Accessibility embedded throughout
+    The project consistently applied principles, including high contrast colours, readable typography, keyboard navigation and text back feedback.        These decisions align with UK Government Accessible guidelines and the EA's commitment to inclusive digital services:   https://www.gov.uk/guidance/accessibility-requirements-for-public-sector-websites-and-apps.
+ 
+  * Testing was robust and balanced
+  * CSV storage kept the system lightweight
+ 
+* 
+### 7 Conclusion
