@@ -707,10 +707,8 @@ At the end, your score is displayed:
   + Your Score: X/5
   + You can then close the application.
 
-
 ### 5.2 Technical Documentation (for Developers)
 This section explains how to run tests locally, understand the project structure, and interpret the main components of the codebase.
-
 
 ### Project Structure
 
@@ -745,21 +743,21 @@ The project uses Python's built-in _unittest_ framework.
 From the project root:
 _python -m unittest_
 
-##  Understanding the codebase
-###  1. Question Model (_Question.py_)
+### 5.3  Understanding the codebase
+###  5.3.1 Question Model (_Question.py_)
 Defines the structure of the quiz question using a dataclass.  This ensures consistent handling of question text, options, answers, difficulty, and category
 
-###  2. QuizManager (_Quiz_manager.py_)
+###  5.3.2 QuizManager (_Quiz_manager.py_)
 Handles:
 * Loading questions from CSV
 * Converting rows into _Question_
 * Checking whether a user's answer is correct
 
-###  3. LoginManager (_Login_manager.py_)
+###  5.3.3 LoginManager (_Login_manager.py_)
 + Loads usernames and passwords from _users.csv_ and validates login attempts.
 + This keeps authentication logic separate from GUI.
 
-###  4. TKinter GUI (_My_tkinter_app.py_)
+###  5.3.4 TKinter GUI (_My_tkinter_app.py_)
 Implements the desktop interface:
 + Dropdown answer selection
 + Image display
@@ -767,12 +765,10 @@ Implements the desktop interface:
 + Navigation between questions
   This is designed with EA accessibility principle in mind.
 
-###  5. Streamlit GUI (_streamlit_app.py_)
+###  5.3.5 Streamlit GUI (_streamlit_app.py_)
 Implements the browser-based interface:
 + Radio button answer selection
 + Automatic layout and accessibility (ideal for remote or web-based use)
-
-
 
 ## 6 Evaluation Section
 The development of the EA Hybrid Quiz was an insightful process, reflecting on its highlights of the MVP of the final product and the areas where further refinement would have strengthened the outcome.  The project followed a full project software-development lifecycle, from early prototyping in Figma to implementation, testing, and documentation.  This section evaluates what went well, what could have been improved and how the experience contributes to future development practice. 
