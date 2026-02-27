@@ -53,7 +53,7 @@ _Functional Requirements Table 1_
 | AR5  | Clear error messages.  |
 
 _Accessibility Requirements Table 2_
-+These choices support inclusive use by EA staff and delivery partners with diverse needs.
++ These choices support inclusive use by EA staff and delivery partners with diverse needs.
 
 
 ### Non-Functional Requirements  
