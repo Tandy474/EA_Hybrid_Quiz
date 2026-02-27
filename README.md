@@ -661,14 +661,15 @@ The EA Hybrid Quis has been designed to be simple, accessible, and intuitive for
 
 ### Using the TKinter desktop version.
   1.  Open the project folder on your EA laptop
-  2.  Run the application by double-clicking _main.py_
-        _python main.py_
-  3.  The login window will appear automatically
+  2.  Run the application by double-clicking
+         +_main.py_
+         + _python main.py_
+  4.  The login window will appear automatically
 
 ### Using the Streamlit Web version
   1.  Open a terminal in the project folder
   2.  Run:
-          _streamlit run streamlit_app.py_
+      +_streamlit run streamlit_app.py_
   3.  Your default browser will open the quiz interface.
 
 ### Logging In
@@ -702,8 +703,8 @@ After logging in:
 
 ### Finishing the Quiz
 At the end, your score is displayed:
-    _Quiz Complete!_
-    _Your Score: X/5
+    +_Quiz Complete!_
+    +_Your Score: X/5
 You can then close the application.
 
 
@@ -716,24 +717,24 @@ This section explains how to run tests locally, understand the project structure
 EA_Hybrid_Quiz
   README.md
   
- main.py                      # Entry point for Tkinter version
+ + main.py                      # Entry point for Tkinter version
  
- My_tkinter_app.py            # Tkinter GUI implementation
+ + My_tkinter_app.py            # Tkinter GUI implementation
   
-streamlit_app.py               # Streamlit web interface
++ streamlit_app.py               # Streamlit web interface
  
- quiz_manager.py              # Core quiz logic (loading questions, checking answers)
+ + quiz_manager.py              # Core quiz logic (loading questions, checking answers)
   
-login_manager.py             # Authentication logic
++ login_manager.py             # Authentication logic
  
- Question.py                  # Dataclass model for questions
+ + Question.py                  # Dataclass model for questions
  
 
  tests
-    __init__.py
-    test_quiz.py           # Unit tests
-  questions.csv            # Quiz data
-  users.csv                # Login credentials
+    + __init__.py
+    + test_quiz.py           # Unit tests
+  + questions.csv            # Quiz data
+  + users.csv                # Login credentials
 
 This modular structure separates logic, data, and interface layers, making the system easier to maintain and extend.
 
