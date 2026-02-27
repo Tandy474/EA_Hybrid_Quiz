@@ -57,8 +57,8 @@ Functional requirements define what the EA Hybrid Quiz must do.  These include a
 | AR5  | Clear error messages.  |
 
 _Accessibility Requirements Table 2_
-+ These choices support inclusive use by EA staff and delivery partners with diverse needs.
-Accessible requirements ensure that the quiz can be used by all EA staff, including thoose with diverse needs.  High contrast colours and readable fonts supports visual clarity (AR1), text is clear and easy to understand (AR4), and error messages are supportive(AR5).  These requirements align quiz with EA accessibility expectations and UK Governement accessible standards.
+
+Accessible requirements ensure that the quiz can be used by all EA staff, delivery partners and staff with diverse needs.  High contrast colours and readable fonts supports visual clarity (AR1), text is clear and easy to understand (AR4), and error messages are supportive(AR5).  These requirements align quiz with EA accessibility expectations and UK Governement accessible standards.
 
 
 ### Non-Functional Requirements  
