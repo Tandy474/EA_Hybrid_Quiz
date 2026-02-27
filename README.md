@@ -661,7 +661,7 @@ The EA Hybrid Quis has been designed to be simple, accessible, and intuitive for
 
 ### Using the TKinter desktop version.
   1.  Open the project folder on your EA laptop
-  2.  Run the application by double-clicking
+  2.  Run the application by double-clicking:
          +_main.py_
          + _python main.py_
   4.  The login window will appear automatically
