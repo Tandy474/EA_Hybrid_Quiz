@@ -669,7 +669,7 @@ The EA Hybrid Quis has been designed to be simple, accessible, and intuitive for
 ### Using the Streamlit Web version
   1.  Open a terminal in the project folder
   2.  Run:
-      +streamlit run streamlit_app.py
+      + streamlit run streamlit_app.py
   3.  Your default browser will open the quiz interface.
 
 ### Logging In
@@ -705,7 +705,7 @@ After logging in:
 At the end, your score is displayed:
   + Quiz Complete!
   + Your Score: X/5
-You can then close the application.
+  + You can then close the application.
 
 
 ### 5.2 Technical Documentation (for Developers)
