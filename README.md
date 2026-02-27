@@ -28,6 +28,7 @@ For the EA HYbrid Quiz, Figma was used to sketch each screen i.e. (_Login_, _Wel
 
 ## Requirements Table
 
+
 ### Functional Requirements Table
 | ID   | Requirement |
 | ---- | ----- |
@@ -53,6 +54,7 @@ For the EA HYbrid Quiz, Figma was used to sketch each screen i.e. (_Login_, _Wel
 | AR5  | Clear error messages.  |
 
 These choices support inclusive use by EA staff and delivery partners with diverse needs.
+
 
 ### Non-Functional Requirements Table
 | ID   | Requirement |
