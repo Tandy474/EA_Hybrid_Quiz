@@ -10,11 +10,12 @@ The EA Hybrid Quiz is an interactive learning application designed to strengthen
 
 A key feature of this project is the hybrid interface approach, offering two front-end options:
   TKinter: a desktop-style GUI suitable for local use on EA laptops.
-  Strealit: a browser-based interface ideal for demonstrations, remote access, and rapid deployment.
+  Streamlit: a browser-based interface ideal for demonstrations, remote access, and rapid deployment.
 
 Both interfaces read from the same CSV-based data store, ensuring consistency and ease of maintenance.  The project uses Python and object-oriented programming principles, with classes for questions, quiz management, and authentication.  The system includes exception handling, input validation, and testable logic, supported by automated unit tests.
 
 For the EA, this MVP is relevant because it provides a low-cost, accessible, and easily maintainable tool that supports organisational competence. The Hybrid design also demonstrates modern development practices, version control, documentation, and continuous integration, aligning with professional software engineering standards.
+
 
 ## 2  Design Section
 ### Figma-style GUI design
@@ -22,6 +23,7 @@ For the EA, this MVP is relevant because it provides a low-cost, accessible, and
 
 Figma is a collaborative interface-design tool used to create wireframes, mockups, and interactive prototypes.
 Designers use it to plan screen layouts, colours, typography, and other user journeys before coding begins.
+
 For the EA HYbrid Quiz, Figma was used to sketch each screen i.e. (_Login_, _Welcome_, _Category Selection_, _Quiz_) to ensure accessibility  and usability requirements are met in line with EA digital principles.
 
 ## Requirements Table
@@ -64,12 +66,13 @@ These choices support inclusive use by EA staff and delivery partners with diver
 
 
 ## Tech Stack Outline
-  +**Language:** Python 3
-  +**GUI Frameworks:**
-    +TKinter (desktop)
-    +Streamlit (Web)
+  **Language:** Python 3
   
-**Data Storage:** CSV files (
+  **GUI Frameworks:**
+    + TKinter (desktop)
+    + Streamlit (Web)
+  
+**Data Storage:** (CSV files)
 
 **Libraries:**
     +CSV - reading/writing data
@@ -95,6 +98,7 @@ The UML  class diagrams provide a visual representation of the system's structur
  
 The EA Hybrid Quiz was developed using Python and follows a modular object-oriented structure.  The system is divided into logical components, data models, managers, and user interfaces to ensure maintainability, testability, and clarity.  This section explains the main modules and functions, showing how they work together to deliver the full quiz experience.
 
+
 ### 3.1 Question (Question.py)
 The _Question_ class represents a single question.  It stores the text, answer options, correct answer, difficulty, and category 
 
@@ -115,6 +119,7 @@ How the _Question_ contributes to the system:
 + Provides a structured data model for each question.
 + Ensures consistency when loading questions from _CSV_
 + Supports both TKinter and Streamlit interfaces with the same format.
+
 
 ### 3.2 QuizManager(quiz_manager.py)
 _QuizManager_ handles loading questions from _CSV_ and checking answers.
@@ -157,7 +162,6 @@ It can be used and reused by TKinter and Streamlit.
 
 
 
-
 How it contributes
   + Loads data (FR2) from _CSV_
   + Converts raw CSV rows into _Question_
@@ -189,9 +193,9 @@ The LoginManager handles user authentication _users.csv_
 ```
 
  How it contributes
-   +Implements secure login (FR1)
-   +Provides clear error handling for invalid credentials.
-   +Keeps authentication separate from UI logic.
+   + Implements secure login (FR1)
+   + Provides clear error handling for invalid credentials.
+   + Keeps authentication separate from UI logic.
 
 
 ### 3.4 TKinter Interface (My_TKinter_app.py)
@@ -534,7 +538,6 @@ if __name__ == "__main__":
       root.mainloop()
 ```
 
-
 How it contributes
   + Controls the full journey
   + Ensures a clean transition between login -- selection -- quiz
@@ -566,6 +569,7 @@ Manual testing was to validate:
   + Display image
   + End of quiz and scoring
 
+
 ### 4.1.2 Automatic unit testing (logic focused)
 Automated tests were written using Python's built-in _unittest_ frameworks.  These tests focused on:
 + Pure functions such as _QuizManager.check()_
@@ -574,12 +578,14 @@ Automated tests were written using Python's built-in _unittest_ frameworks.  The
 
 Unit testing ensured that the core logic remained stable as features were added incrementally.  This supports future continuous integration pipelines.
 
+
 ### 4.1.3 Why this strategy was chosen
 
 | Method           | Purpose                                                  | Justification                                                                 |
 | :---             | :---:                                                    |  --:                                                                          |
 | Manual Testing   | Validate GUI behaviour, accessibility, and user flow     | GUI requires human interaction to verify layout, readability, and usability   |
 | Unit testing     | Validate logic, ensure reliability, prevent regressions  | Pure function and data loading can be tested automatically and repeatedly     |
+
 
 ### 4.2 Outcomes of application testing
 ### 4.2.1 Manual testing results
@@ -733,6 +739,7 @@ This modular structure separates logic, data, and interface layers, making the s
 ### 6 Evaluation Section
 The development of the EA Hybrid Quiz was an insightful process, reflecting on its highlights of the MVP of the final product and the areas where further refinement would have strengthened the outcome.  The project followed a full project software-development lifecycle, from early prototyping in Figma to implementation, testing, and documentation.  This section evaluates what went well, what could have been improved and how the experience contributes to future development practice. 
 
+
 ###  6.1 What went well
 Several aspects of the project progressed smoothly and contributed to a stable and  accessible, and maintainable product.
 
@@ -747,6 +754,7 @@ Several aspects of the project progressed smoothly and contributed to a stable a
  
   * Testing was robust and balanced
   * CSV storage kept the system lightweight
+
  
 ### 6.2 What could be improved
 Although the project met the MVP goals, several areas could be enhanced in future iterations.
@@ -757,6 +765,7 @@ Although the project met the MVP goals, several areas could be enhanced in futur
   * More unit tests could be added
   * Additional question types could  enhance engagement
   * Enabling users to create their own username and password to access the system
+
 
 ### 6.3 Reflection
 Building this project highlighted how even a small application benefits from clear architecture, testing, and documentation.  This dual interface reinforced the value of separating concerns, and focus on accessibility made the design more thoughtful and user-centred.  There is room for improvement.  The EA Hybrid Quiz system successfully delivers an accessible and training tool for staff, with both desktop interfaces, a modular architecture and documentation ready for deployment and future expansion.
