@@ -28,8 +28,7 @@ For the EA HYbrid Quiz, Figma was used to sketch each screen i.e. (_Login_, _Wel
 
 ## Requirements Table
 
-
-### Functional Requirements Table
+### Functional Requirements  
 | ID   | Requirement |
 | ---- | ----- |
 | FR1  | System must authenticate users via CSV.  |
@@ -41,10 +40,10 @@ For the EA HYbrid Quiz, Figma was used to sketch each screen i.e. (_Login_, _Wel
 | FR7  | System must show correct/ incorrect feedback.  |
 | FR8  | System must show final score.  |
 | FR9  | System must support both TKinter and Streamlit interfaces  |
+_Functional Requirements Table 2.1_
 
 
-
-### Accessibility Requirements Table
+### Accessibility Requirements  
 | ID   | Requirement |
 | ---- | -------- |
 | AR1  | High-contrast colour scheme. (e.g., white text on blue/green backgrounds) |
@@ -53,10 +52,11 @@ For the EA HYbrid Quiz, Figma was used to sketch each screen i.e. (_Login_, _Wel
 | AR4  | Large readable fonts.  |
 | AR5  | Clear error messages.  |
 
+_Accessibility Requirements Table 2.2_
 These choices support inclusive use by EA staff and delivery partners with diverse needs.
 
 
-### Non-Functional Requirements Table
+### Non-Functional Requirements  
 | ID   | Requirement |
 | ---- | -------- |
 | NFR1 | App should load within 2 seconds.  |
@@ -64,7 +64,7 @@ These choices support inclusive use by EA staff and delivery partners with diver
 | NFR3 | Code must be modular and maintainable.  |
 | NFR4 | Logic must be testable via unit tests.  |
 | NFR5 | Must run on standard EA laptops without extra installation.  |
-
+_Non-Functional Requirements Table 2.3_
 
 
 ## Tech Stack Outline
@@ -588,6 +588,7 @@ Unit testing ensured that the core logic remained stable as features were added 
 | Manual Testing   | Validate GUI behaviour, accessibility, and user flow     | GUI requires human interaction to verify layout, readability, and usability   |
 | Unit testing     | Validate logic, ensure reliability, prevent regressions  | Pure function and data loading can be tested automatically and repeatedly     |
 
+_Unit logic testing table_
 
 ### 4.2 Outcomes of application testing
 ### 4.2.1 Manual testing results
@@ -607,6 +608,7 @@ The table below summarises the outcomes of manual tests performed on both TKinte
 | End Quiz score                    | Score displayed accurately          | Works                 |  Pass    |           
 | TKinter image loading             |Image displayed if available         | Works                 |  Pass    |           
 
+_Application outcome testing table_
 All manual tests passed successfully, demonstrating that the GUI behaves consistently and meets functional and accessibility requirements.
 
 ### 4.2.2 Unit testing outcomes
