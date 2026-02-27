@@ -662,7 +662,7 @@ The EA Hybrid Quis has been designed to be simple, accessible, and intuitive for
 ### Using the TKinter desktop version.
   1.  Open the project folder on your EA laptop
   2.  Run the application by double-clicking:
-         +_main.py_
+         _main.py_
          + _python main.py_
   4.  The login window will appear automatically
 
@@ -688,13 +688,13 @@ After logging in:
 ### Answering Questions
   1.  Read the question text
   2. Select your answer
-        +Tkinter:  _dropdown menu_
-        +Streamlit : _radio buttons_
+        + Tkinter:  _dropdown menu_
+        + Streamlit : _radio buttons_
   3. Select Submit
       You will receive immediate feedback:
-        +Correct: green success message.
-        +Incorrect: message showing the correct answer
-          Feedback is text-based to support accessibility.
+        + Correct: green success message.
+        + Incorrect: message showing the correct answer
+         +  Feedback is text-based to support accessibility.
 
 ### Navigating the Quiz
 * Select Next to move to the next question
