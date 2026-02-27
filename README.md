@@ -40,7 +40,7 @@ For the EA HYbrid Quiz, Figma was used to sketch each screen i.e. (_Login_, _Wel
 | FR7  | System must show correct/ incorrect feedback.  |
 | FR8  | System must show final score.  |
 | FR9  | System must support both TKinter and Streamlit interfaces  |
-_Functional Requirements Table 2.1_
+_Functional Requirements Table 1_
 
 
 ### Accessibility Requirements  
@@ -52,8 +52,8 @@ _Functional Requirements Table 2.1_
 | AR4  | Large readable fonts.  |
 | AR5  | Clear error messages.  |
 
-_Accessibility Requirements Table 2.2_
-These choices support inclusive use by EA staff and delivery partners with diverse needs.
+_Accessibility Requirements Table 2_
++These choices support inclusive use by EA staff and delivery partners with diverse needs.
 
 
 ### Non-Functional Requirements  
@@ -64,7 +64,7 @@ These choices support inclusive use by EA staff and delivery partners with diver
 | NFR3 | Code must be modular and maintainable.  |
 | NFR4 | Logic must be testable via unit tests.  |
 | NFR5 | Must run on standard EA laptops without extra installation.  |
-_Non-Functional Requirements Table 2.3_
+_Non-Functional Requirements Table 3_
 
 
 ## Tech Stack Outline
