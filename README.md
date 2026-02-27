@@ -662,7 +662,7 @@ The EA Hybrid Quis has been designed to be simple, accessible, and intuitive for
 ### Using the TKinter desktop version.
   1.  Open the project folder on your EA laptop
   2.  Run the application by double-clicking:
-         _main.py_
+         + _main.py_
          + _python main.py_
   4.  The login window will appear automatically
 
@@ -737,6 +737,41 @@ EA_Hybrid_Quiz
   + users.csv                # Login credentials
 
 This modular structure separates logic, data, and interface layers, making the system easier to maintain and extend.
+
+##  Running tests locally
+The project uses Python's built-in _unittest_ framework.
+
+###  Run all tests
+From the project root:
+_python -m unittest_
+
+##  Understanding the codebase
+###  1. Question Model (_Question.py_)
+Defines the structure of the quiz question using a dataclass.  This ensures consistent handling of question text, options, answers, difficulty, and category
+
+###  2. QuizManager (_Quiz_manager.py_)
+Handles:
+* Loading questions from CSV
+* Converting rows into _Question_
+* Checking whether a user's answer is correct
+
+###  3. LoginManager (_Login_manager.py_)
++ Loads usernames and passwords from _users.csv_ and validates login attempts.
++ This keeps authentication logic separate from GUI.
+
+###  4. TKinter GUI (_My_tkinter_app.py_)
+Implements the desktop interface:
++ Dropdown answer selection
++ Image display
++ Accessible feedback
++ Navigation between questions
+  This is designed with EA accessibility principle in mind.
+
+###  5. Streamlit GUI (_streamlit_app.py_)
+Implements the browser-based interface:
++ Radio button answer selection
++ Automatic layout and accessibility (ideal for remote or web-based use)
+
 
 
 ## 6 Evaluation Section
