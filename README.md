@@ -715,24 +715,24 @@ This section explains how to run tests locally, understand the project structure
 EA_Hybrid_Quiz
   README.md
   
- + main.py               -----       # Entry point for Tkinter version
+ + _main.py_               -----       # Entry point for Tkinter version
  
- + My_tkinter_app.py    ------        # Tkinter GUI implementation
+ + _My_tkinter_app.py_    ------        # Tkinter GUI implementation
   
-+ streamlit_app.py               # Streamlit web interface
++ _streamlit_app.py_       ------        # Streamlit web interface
  
- + quiz_manager.py              # Core quiz logic (loading questions, checking answers)
+ + _quiz_manager.py_     -----           # Core quiz logic (loading questions, checking answers)
   
-+ login_manager.py             # Authentication logic
++ _login_manager.py_     ------        # Authentication logic
  
- + Question.py                  # Dataclass model for questions
+ + _Question.py_         ------         # Dataclass model for questions
  
 
  tests
   + __init__.py
-  + test_quiz.py             # Unit tests
-  + questions.csv            # Quiz data
-  + users.csv                # Login credentials
+  + _test_quiz.py_      -----      # Unit tests
+  + _questions.csv_     -----      # Quiz data
+  + _users.csv_         ----       # Login credentials
 
 This modular structure separates logic, data, and interface layers, making the system easier to maintain and extend.
 
