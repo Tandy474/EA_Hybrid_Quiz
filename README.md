@@ -715,9 +715,9 @@ This section explains how to run tests locally, understand the project structure
 EA_Hybrid_Quiz
   README.md
   
- + main.py                      # Entry point for Tkinter version
+ + main.py               -----       # Entry point for Tkinter version
  
- + My_tkinter_app.py            # Tkinter GUI implementation
+ + My_tkinter_app.py    ------        # Tkinter GUI implementation
   
 + streamlit_app.py               # Streamlit web interface
  
