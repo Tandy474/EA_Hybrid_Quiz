@@ -24,7 +24,8 @@ For the EA, this MVP is relevant because it provides a low-cost, accessible, and
 Figma is a collaborative interface-design tool used to create wireframes, mockups, and interactive prototypes.
 Designers use it to plan screen layouts, colours, typography, and other user journeys before coding begins.
 
-For the EA HYbrid Quiz, Figma was used to sketch each screen i.e. (_Login_, _Welcome_, _Category Selection_, _Quiz_) to ensure accessibility  and usability requirements are met in line with EA digital principles.
+For the EA HYbrid Quiz, Figma was used to sketch each screen i.e. (_Login_, _Welcome_, _Category Selection_, _Quiz_) to ensure accessibility  and usability requirements are met in line with EA digital principles.  The wireframes acted as a visual blueprint for both TKinter  and Streamlit interfaces, ensuring consistency across platforms to reduce redesign later in development.
+
 
 ## Requirements Table
 
@@ -42,6 +43,9 @@ For the EA HYbrid Quiz, Figma was used to sketch each screen i.e. (_Login_, _Wel
 | FR9  | System must support both TKinter and Streamlit interfaces  |
 _Functional Requirements Table 1_
 
+Functional requirements define what the EA Hybrid Quiz must do.  These include a secure login(FR1), displaying a welcome screen(FR2), allowing users to select a category (FR3) and difficulty(FR4), loading questions from CSV(FR5), enabling answer submission (FR6) and providing immediate feedback(FR7).  The final score(FR9) is displayed.  Together the requirements ensure the quiz delivers a complete user journe from login to completion.
+
+
 
 ### Accessibility Requirements  
 | ID   | Requirement |
@@ -54,6 +58,7 @@ _Functional Requirements Table 1_
 
 _Accessibility Requirements Table 2_
 + These choices support inclusive use by EA staff and delivery partners with diverse needs.
+Accessible requirements ensure that the quiz can be used by all EA staff, including thoose with diverse needs.  High contrast colours and readable fonts supports visual clarity (AR1), text is clear and easy to understand (AR4), and error messages are supportive(AR5).  These requirements align quiz with EA accessibility expectations and UK Governement accessible standards.
 
 
 ### Non-Functional Requirements  
@@ -65,6 +70,9 @@ _Accessibility Requirements Table 2_
 | NFR4 | Logic must be testable via unit tests.  |
 | NFR5 | Must run on standard EA laptops without extra installation.  |
 _Non-Functional Requirements Table 3_
+
+Non functional requirements describe how the system should perform rather than what it does.  The quiz must load quickly (FR5 - FR8) and maintain consistent, intuitive interface across TKinter and Streamlit (AR1 - AR5).  The architecture improves maintainability and testing.
+
 
 
 ## Tech Stack Outline
