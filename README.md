@@ -652,7 +652,7 @@ This demonstrates that:
   + The testing strategy successfully validated both the user experience and the logic, ensuring a suitable MVP for EA staff training.
 
 
-###  5 Documentation Section
+##  5 Documentation Section
 ### 5.1 User documentation for (EA)
 
 The EA Hybrid Quis has been designed to be simple, accessible, and intuitive for the Environments agency staff.  This section explains how to interact with the quiz, whether using the desktop (TKinter) version or the browser (Streamlit) version.
@@ -738,7 +738,7 @@ login_manager.py             # Authentication logic
 This modular structure separates logic, data, and interface layers, making the system easier to maintain and extend.
 
 
-### 6 Evaluation Section
+## 6 Evaluation Section
 The development of the EA Hybrid Quiz was an insightful process, reflecting on its highlights of the MVP of the final product and the areas where further refinement would have strengthened the outcome.  The project followed a full project software-development lifecycle, from early prototyping in Figma to implementation, testing, and documentation.  This section evaluates what went well, what could have been improved and how the experience contributes to future development practice. 
 
 
@@ -762,7 +762,7 @@ Several aspects of the project progressed smoothly and contributed to a stable a
 Although the project met the MVP goals, several areas could be enhanced in future iterations.
 
   ### More advanced authentication
-  The login is functional and basic.  A more secure approach  like  hashed passwords would improve security and align with best practice guidance from the OWASP Authentication cheatsheet could inform future improvements.https://owasp.org/www-project-cheat-sheets/
+  The login is functional and basic.  A more secure approach  like hashed passwords would improve security and align with best practice guidance from the OWASP Authentication cheatsheet could inform future improvements.https://owasp.org/www-project-cheat-sheets/
 
   * More unit tests could be added
   * Additional question types could  enhance engagement
