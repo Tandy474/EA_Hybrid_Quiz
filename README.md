@@ -71,8 +71,9 @@ These choices support inclusive use by EA staff and delivery partners with diver
   **Language:** Python 3
   
   **GUI Frameworks:**
-  +TKinter (desktop)
-  +Streamlit (Web)
+  
+    +TKinter (desktop)
+    +Streamlit (Web)
   
 **Data Storage:** (CSV files)
 
