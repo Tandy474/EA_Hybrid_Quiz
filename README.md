@@ -703,8 +703,8 @@ After logging in:
 
 ### Finishing the Quiz
 At the end, your score is displayed:
-    + Quiz Complete!_
-    + Your Score: X/5
+  + Quiz Complete!
+  + Your Score: X/5
 You can then close the application.
 
 
